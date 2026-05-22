@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <link rel="canonical" href="https://nrvertex.com/blog/porque-mi-negocio-no-aparece" />
+
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Por qué mi negocio no aparece en Google Maps y cómo solucionarlo | NRVERTEX</title>
+  <meta name="description" content="¿Tu ficha de Google Maps está invisible o suspendida? Descubrí las 5 causas más comunes y los pasos técnicos exactos para recuperarla en Buenos Aires." />
+
+  <!-- Evitar FOUC en transición de página -->
+  <script>
+    if (sessionStorage.getItem('nrv-transition-incoming') === '1') {
+      document.documentElement.classList.add('nrv-transition-active');
+      const style = document.createElement('style');
+      style.id = 'nrv-fouc-temp-style';
+      style.innerHTML = '.nrv-transition-active, .nrv-transition-active body { background-color: #09090b !important; } .nrv-transition-active #app, .nrv-transition-active .contact-page { opacity: 0 !important; }';
+      document.head.appendChild(style);
+      setTimeout(function() {
+        document.documentElement.classList.remove('nrv-transition-active');
+        const t = document.getElementById('nrv-fouc-temp-style');
+        if (t) t.remove();
+      }, 2500);
+    }
+  </script>
+
+  <!-- Preconnect to Google Fonts domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Combined and optimized Google Fonts preload (non-blocking) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  </noscript>
+
+  <!-- Material Symbols Outlined -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_forward,bolt,calendar_today,call,check,check_circle,close,directions,expand_more,image,info,keyboard_arrow_down,language,location_on,menu,photo_camera,query_stats,reviews,search,send,share,shield,star,verified,warning&display=swap">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_forward,bolt,calendar_today,call,check,check_circle,close,directions,expand_more,image,info,keyboard_arrow_down,language,location_on,menu,photo_camera,query_stats,reviews,search,send,share,shield,star,verified,warning&display=swap">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_forward,bolt,calendar_today,call,check,check_circle,close,directions,expand_more,image,info,keyboard_arrow_down,language,location_on,menu,photo_camera,query_stats,reviews,search,send,share,shield,star,verified,warning&display=swap">
+  </noscript>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/casos/caso.css">
+
+  <style>
+    /* Estilos Premium del Artículo */
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 100px;
+    }
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .article-content h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .article-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: white;
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+    .article-content p {
+      margin-bottom: 24px;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 28px;
+      padding-left: 24px;
+    }
+    .article-content li {
+      margin-bottom: 12px;
+    }
+    .article-content strong {
+      color: white;
+    }
+    .article-content blockquote {
+      border-left: 4px solid var(--accent-primary);
+      padding-left: 20px;
+      font-style: italic;
+      color: var(--text-primary);
+      margin: 36px 0;
+      background: rgba(124, 58, 237, 0.03);
+      padding: 24px;
+      border-radius: 0 12px 12px 0;
+    }
+    .article-content img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      margin: 32px 0;
+    }
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 40px 0;
+      font-size: 0.95rem;
+    }
+    .article-content th, .article-content td {
+      border: 1px solid var(--border);
+      padding: 14px 18px;
+      text-align: left;
+    }
+    .article-content th {
+      background: rgba(124, 58, 237, 0.06);
+      color: white;
+      font-weight: 600;
+    }
+    .article-content td {
+      color: var(--text-secondary);
+    }
+    .article-content tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.01);
+    }
+    .article-content .highlight-box {
+      background: linear-gradient(135deg, rgba(124,58,237,0.08) 0%, rgba(192,132,252,0.03) 100%);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      border-radius: 16px;
+      padding: 28px;
+      margin: 36px 0;
+    }
+    .article-content .highlight-box h4 {
+      color: white;
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .article-cta {
+      margin-top: 60px;
+      background: rgba(124, 58, 237, 0.03);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(124, 58, 237, 0.05);
+    }
+    .article-cta h3 {
+      font-size: 1.8rem;
+      color: white;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    .article-cta p {
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+    .article-hero-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+    /* Reset scroll opacity indicator */
+    .breadcrumb, .badge-wrap, .hero-title, .hero-desc {
+      opacity: 1 !important;
+      filter: none !important;
+      transform: none !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Progress Bar de Lectura -->
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <div id="app">
+    <!-- 1. TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar" data-scarcity data-cupos="2">
+      <p style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; margin: 0; padding: 0 4px;">
+        <span><span class="nrv-desktop-only">Solo tomamos 3 clientes nuevos por mes.</span> Quedan <strong data-cupos-text style="color: #FFFFFF !important; font-weight: 800; background: rgba(255,255,255,0.15); padding: 2px 6px; border-radius: 4px;">2</strong> lugares para <strong data-mes style="color: #FFFFFF !important;">este mes</strong>.</span>
+        <span data-dots class="nrv-dots-container"></span>
+        <span data-timer style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color: #FFFFFF !important; background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 4px; letter-spacing:0.05em; margin-left: 8px; margin-right: 16px; font-weight: 500;"></span>
+        <a href="/contacto" class="nrv-topbar-link top-bar-btn">Reservar mi lugar →</a>
+      </p>
+    </div>
+
+    <!-- 2. NAVBAR -->
+    <div class="navbar-wrapper">
+      <nav class="navbar">
+        <a href="/" class="nav-brand" style="text-decoration: none; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+          <span>NRVERTEX</span>
+          <span style="font-family:'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent-primary); border: 1px solid var(--accent-primary); padding: 2px 5px; border-radius: 4px; letter-spacing: 0.05em; font-weight: bold;">← INICIO</span>
+        </a>
+        <div class="nav-links">
+          <a href="/#servicios">Servicios</a>
+          <a href="/#resultados">Casos</a>
+          <a href="/#proceso">Proceso</a>
+          <a href="/#preguntas">Preguntas</a>
+          <a href="/blog" style="color: var(--primary-glow)">Blog</a>
+        </div>
+        <a href="/contacto" class="cta-trigger nav-cta desktop-only">Agendá por WhatsApp</a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+      <div class="mobile-menu-content">
+        <a href="/#servicios" class="mobile-link">Servicios</a>
+        <a href="/#resultados" class="mobile-link">Casos</a>
+        <a href="/#proceso" class="mobile-link">Proceso</a>
+        <a href="/#preguntas" class="mobile-link">Preguntas</a>
+        <a href="/blog" class="mobile-link" style="color: var(--primary-glow)">Blog</a>
+        <a href="/contacto" class="cta-trigger btn-primary" style="margin-top: 24px;">Agendá por WhatsApp</a>
+      </div>
+    </div>
+
+    <main id="main-content">
+      <!-- HERO DEL ARTÍCULO -->
+      <section class="caso-hero" style="min-height: auto; padding-top: 160px; padding-bottom: 40px;">
+      <div class="hero-glow"></div>
+      <div class="container text-center">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">NRVERTEX</a> / <a href="/blog">Blog</a> / <span>¿Por qué mi negocio no aparece?</span>
+        </nav>
+
+        <!-- Badge -->
+        <div class="badge-wrap">
+          <span class="badge-pill">RESOLUCIÓN DE PROBLEMAS</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-title" style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 20px;">
+          Por Qué mi Negocio no Aparece<br>
+          <span class="italic-accent">En Google Maps (Y Soluciones)</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="hero-desc" style="max-width: 650px; margin: 0 auto;">
+          Análisis de las 5 causas más comunes por las que tu ficha comercial permanece invisible o suspendida, y los pasos técnicos exactos para recuperarla.
+        </p>
+      </div>
+    </section>
+
+    <!-- CUERPO DEL ARTÍCULO -->
+    <article class="article-container">
+      <img src="/img/mi_negocio_no_maps.webp" alt="Errores de posicionamiento y soluciones en Google Maps" class="article-hero-img" width="1024" height="1024" fetchpriority="high">
+      
+      <div class="article-content">
+        <p>
+          Es una de las frustraciones más recurrentes para los dueños de pymes y comercios en CABA: abrís el buscador de Google o la app de Google Maps, ingresás el nombre de tu negocio o tu rubro local, y <strong>no aparecés en ninguna parte</strong>. Peor aún, ves que tu competencia directa —incluso locales con menos trayectoria— ocupan los tres primeros y codiciados lugares.
+        </p>
+        <p>
+          Que tu negocio no sea visible en Maps no es casualidad. Existen 5 factores técnicos muy concretos por los cuales Google decide ocultar tu perfil comercial. A continuación, te explicamos cómo diagnosticar cada problema y aplicar la corrección exacta.
+        </p>
+
+        <h2>1. Tu perfil comercial no está verificado (O el estado es pendiente)</h2>
+        <p>
+          Es la causa más obvia pero muy común en nuevos emprendimientos. Si no completaste el flujo de verificación exigido por Google, el perfil permanece en estado de "borrador" y solo es visible para vos cuando iniciás sesión con tu cuenta de administrador.
+        </p>
+        <p>
+          <strong>La Solución:</strong> Accedé a tu panel de Google Business Profile. Si ves un banner rojo que indica <em>"Verificación requerida"</em> o <em>"Google está revisando tu verificación"</em>, significa que debés aportar la prueba que solicita el motor de búsqueda (generalmente un video del local o documentación fiscal).
+        </p>
+
+        <h2>2. Tu ficha comercial fue suspendida (Infracción de directrices)</h2>
+        <p>
+          Google es extremadamente estricto con la veracidad de la información en su mapa. Si detecta comportamientos sospechosos, suspende la ficha sin previo aviso. Cuando esto ocurre, tu negocio desaparece del mapa por completo y tus reseñas acumuladas quedan congeladas.
+        </p>
+        <p>
+          Las razones más habituales de suspensión en Argentina son:
+        </p>
+        <ul>
+          <li><strong>Direcciones falsas:</strong> Usar la dirección de un espacio de coworking, oficina virtual o un buzón postal público donde no hay empleados atendiendo físicamente.</li>
+          <li><strong>Keyword stuffing en el nombre:</strong> Colocar palabras clave no oficiales en el nombre del negocio (ej. agregar "cerrajero urgente barato" al nombre real).</li>
+          <li><strong>Categoría incorrecta:</strong> Elegir una categoría comercial que no guarda relación con tu actividad para intentar captar otro tipo de búsquedas.</li>
+        </ul>
+        <p>
+          <strong>La Solución:</strong> Corregí los datos infractores de tu perfil para adaptarlos estrictamente a las directrices de Google y, posteriormente, enviá un <strong>formulario de restablecimiento</strong> detallando la corrección con fotos de la fachada y habilitación comercial.
+        </p>
+
+        <h2>3. Falta de autoridad local y relevancia SEO</h2>
+        <p>
+          A veces la ficha está perfectamente verificada y libre de penalizaciones, pero simplemente aparece en la posición 45 de los resultados. Dado que el 90% de los usuarios solo mira el <strong>Local Pack (Top 3)</strong>, sentís que no existís.
+        </p>
+        <p>
+          Google ordena las fichas mediante un algoritmo basado en tres variables: <strong>Proximidad, Relevancia y Prominencia</strong>. Si tu ficha carece de optimizaciones y menciones externas, Google priorizará a otros.
+        </p>
+
+        <div class="highlight-box">
+          <h4>
+            <span class="material-symbols-outlined" style="color: #c084fc;">info</span>
+            ¿Qué es la Prominencia Local?
+          </h4>
+          <p style="margin: 0; font-size: 0.95rem;">
+            Es la autoridad que tiene tu negocio fuera de Google Maps. Esto incluye: backlinks de portales web argentinos, menciones en blogs de tu barrio de CABA, presencia consistente en redes sociales y la cantidad y calidad de tus reseñas de 5 estrellas de perfiles reales (Local Guides).
+          </p>
+        </div>
+
+        <h2>4. El filtro de proximidad y competencia densa</h2>
+        <p>
+          Si tu negocio comparte edificio u oficina con otros profesionales del mismo rubro (por ejemplo, múltiples consultorios odontológicos en el mismo piso en Belgrano o clínicas de abogados en Tribunales), Google Maps suele aplicar un <strong>filtro de duplicación</strong>. Para no saturar el mapa, oculta temporalmente algunas fichas similares y solo muestra la que considera con mayor relevancia y reseñas.
+        </p>
+        <p>
+          <strong>La Solución:</strong> Diferenciar tu perfil al máximo. Utilizá un número telefónico local único (evitá teléfonos genéricos compartidos), definí con total precisión tu número de oficina o departamento, e implementá una estrategia agresiva de captación de reseñas locales específicas.
+        </p>
+
+        <h2>Checklist Técnico de Diagnóstico Rápido</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Síntoma</th>
+              <th>Causa más probable</th>
+              <th>Acción inmediata</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>No aparezco ni buscando mi nombre exacto.</td>
+              <td>Suspensión de ficha o falta de verificación.</td>
+              <td>Revisar el estado en el panel de control comercial.</td>
+            </tr>
+              <td>Aparezco al buscar mi nombre, pero no mi servicio.</td>
+              <td>Categorías mal elegidas o falta de SEO local.</td>
+              <td>Optimizar la categoría principal e incorporar keywords en la descripción.</td>
+            </tr>
+            <tr>
+              <td>Aparezco solo cuando estoy muy cerca del local.</td>
+              <td>Falta de prominencia digital y autoridad web.</td>
+              <td>Implementar SEO local en tu sitio web y linkbuilding nacional.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Conclusión: Recuperá tu visibilidad local</h2>
+        <p>
+          Google Maps no oculta los negocios por capricho; lo hace porque busca ofrecer la mejor experiencia y fiabilidad a los usuarios porteños que realizan búsquedas al instante. Diagnosticar el motivo exacto es el primer paso para trazar un plan de optimización que te devuelva la visibilidad y el flujo constante de clientes a tu puerta.
+        </p>
+
+        <div class="article-cta">
+          <h3>¿Ficha suspendida o invisible? Nosotros lo solucionamos</h3>
+          <p>
+            En NRVERTEX recuperamos fichas suspendidas, resolvemos problemas de verificación complejos ante soporte de Google y estructuramos tu perfil local para que compita directamente en el Top 3 de CABA.
+          </p>
+          <a href="/contacto" class="cta-trigger btn-primary" style="display: inline-block;">Consultar por mi Ficha</a>
+        </div>
+
+        <div class="back-link-wrapper text-center" style="margin-top: 40px;">
+          <a href="/blog" class="back-link">← Volver al Blog</a>
+        </div>
+      </div>
+    </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand-col">
+          <a href="/" class="footer-brand">NRVERTEX</a>
+          <p class="footer-desc">Vamos a conseguirte más clientes a los que darles un servicio excepcional.</p>
+          <p class="footer-desc" style="font-size:12px;">Soluciones a medida para negocios Argentinos que buscan crecer.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Página</h4>
+          <ul>
+            <li><a href="/#proceso">Proceso</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li><a href="/#testimonios">Testimonios</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="/#preguntas">Preguntas</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Conectá</h4>
+          <ul>
+            <li><a href="/contacto" class="cta-trigger">Agendá por WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING CTA -->
+    <a href="/contacto" class="floating-cta cta-trigger" id="floating-cta">
+      <span class="material-symbols-outlined" style="font-size: 20px;">call</span> Agendá por WhatsApp
+    </a>
+  </div>
+
+  <!-- Schema Markup para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "NRVERTEX",
+        "item": "https://nrvertex.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://nrvertex.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Por qué mi negocio no aparece en Google Maps",
+        "item": "https://nrvertex.com/blog/porque-mi-negocio-no-aparece"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Por qué mi negocio no aparece en Google Maps (y cómo solucionarlo)",
+    "image": "https://nrvertex.com/img/mi_negocio_no_maps.webp",
+    "genre": "Soporte de Google Maps",
+    "keywords": "Ficha Suspendida, Google Maps invisible, Error de verificación, Google Business Profile, Pymes Buenos Aires",
+    "publisher": {
+      "@type": "Organization",
+      "name": "NRVERTEX",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nrvertex.com/screen.webp"
+      }
+    },
+    "url": "https://nrvertex.com/blog/porque-mi-negocio-no-aparece",
+    "datePublished": "2026-05-22",
+    "description": "Descubrí los 5 motivos más comunes por los cuales tu ficha comercial de Google Business Profile permanece invisible o ha sido suspendida, y cómo recuperarla paso a paso.",
+    "author": {
+      "@type": "Organization",
+      "name": "NRVERTEX"
+    }
+  }
+  </script>
+
+  <!-- Módulos de Javascript -->
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/casos/caso.js"></script>
+</body>
+</html>

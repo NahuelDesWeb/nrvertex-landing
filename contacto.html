@@ -1,0 +1,1685 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <link rel="canonical" href="https://nrvertex.com/contacto" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiero Aparecer en Google Maps | Consulta Gratis de SEO Local CABA | NRVERTEX</title>
+  <meta name="description" content="Completá nuestro formulario conversational para recibir una auditoría gratuita de SEO local CABA y posicionamiento en Google Maps para pymes en Buenos Aires." />
+
+  <!-- Evitar FOUC en transición de página -->
+  <script>
+    if (sessionStorage.getItem('nrv-transition-incoming') === '1') {
+      document.documentElement.classList.add('nrv-transition-active');
+      const style = document.createElement('style');
+      style.id = 'nrv-fouc-temp-style';
+      style.innerHTML = '.nrv-transition-active, .nrv-transition-active body { background-color: #09090b !important; } .nrv-transition-active #app, .nrv-transition-active .contact-page { opacity: 0 !important; }';
+      document.head.appendChild(style);
+      // Fallback de seguridad
+      setTimeout(function() {
+        document.documentElement.classList.remove('nrv-transition-active');
+        const t = document.getElementById('nrv-fouc-temp-style');
+        if (t) t.remove();
+      }, 2500);
+    }
+  </script>
+
+  <!-- Preconnect to Google Fonts domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Combined and optimized Google Fonts preload (non-blocking) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  </noscript>
+
+  <!-- Material Symbols Outlined (Full set for reliability) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_forward,bolt,calendar_today,call,check,check_circle,close,directions,expand_more,image,info,keyboard_arrow_down,language,location_on,menu,photo_camera,query_stats,reviews,search,send,share,shield,star,verified,warning&display=swap">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_forward,bolt,calendar_today,call,check,check_circle,close,directions,expand_more,image,info,keyboard_arrow_down,language,location_on,menu,photo_camera,query_stats,reviews,search,send,share,shield,star,verified,warning&display=swap">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_forward,bolt,calendar_today,call,check,check_circle,close,directions,expand_more,image,info,keyboard_arrow_down,language,location_on,menu,photo_camera,query_stats,reviews,search,send,share,shield,star,verified,warning&display=swap">
+  </noscript>
+
+  <link rel="stylesheet" href="/src/style.css">
+  <style>
+    html, body, .contact-page {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      position: relative;
+    }
+
+    html { scroll-behavior: smooth; }
+    /* Page transition overlay */
+    .page-transition {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+    .page-transition.done {
+      opacity: 0;
+    }
+
+    /* Contact page layout */
+    .contact-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+    }
+
+    .contact-header {
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .contact-brand {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .contact-back:hover { color: white; }
+
+    .contact-body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 60px 40px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* Left: info panel */
+    .contact-info {
+      position: sticky;
+      top: 40px;
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease 0.2s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+    }
+    .contact-info.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .contact-info .pill-badge {
+      margin-bottom: 20px;
+    }
+
+    .contact-info h1 {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    /* Letter-by-letter writing animation styling */
+    .word-wrap {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .char-span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(8px) scale(0.92);
+      filter: blur(3px);
+      will-change: transform, opacity, filter;
+    }
+
+    .contact-info.revealed .char-span {
+      animation: writeChar 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      animation-delay: calc(var(--char-idx) * 18ms + 400ms);
+    }
+
+    @keyframes writeChar {
+      0% {
+        opacity: 0;
+        transform: translateY(8px) scale(0.92);
+        filter: blur(3px);
+        color: var(--primary-glow, #c084fc);
+        text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+      }
+      50% {
+        opacity: 0.8;
+        color: var(--primary-light, #a855f7);
+        text-shadow: 0 0 12px rgba(168, 85, 247, 0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+        color: inherit;
+        text-shadow: none;
+      }
+    }
+
+    .contact-info p,
+    .contact-info .trust-list,
+    .contact-info .direct-whatsapp-wrap {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transition-delay: 1.2s; /* Aparecen elegantemente después de escribirse el título */
+    }
+
+    .contact-info.revealed p,
+    .contact-info.revealed .trust-list,
+    .contact-info.revealed .direct-whatsapp-wrap {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact-info p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      font-size: 15px;
+    }
+
+    .trust-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .trust-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: #d4d4d8;
+    }
+
+    .trust-list li span.material-symbols-outlined {
+      font-size: 18px;
+      color: var(--primary);
+      font-variation-settings: 'FILL' 1, 'wght' 600;
+      flex-shrink: 0;
+    }
+
+    /* Right: form */
+    .contact-form-wrap {
+      opacity: 0;
+      transform: translateY(50px) scale(0.97);
+      transition: opacity 0.7s ease 0.1s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+    }
+    .contact-form-wrap.revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .form-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-light);
+      border-radius: 24px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 20%; right: 20%; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+
+    .custom-form .form-group {
+      margin-bottom: 22px;
+    }
+    .custom-form label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #e4e4e7;
+    }
+    .custom-form input[type="text"],
+    .custom-form input[type="email"],
+    .custom-form input[type="tel"],
+    .custom-form textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: white;
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .custom-form input:focus,
+    .custom-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: rgba(124, 58, 237, 0.05);
+    }
+    .custom-form input::placeholder,
+    .custom-form textarea::placeholder {
+      color: rgba(255,255,255,0.25);
+    }
+    .custom-form textarea {
+      min-height: 80px;
+      resize: vertical;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(124,58,237,0.5) transparent;
+    }
+    .custom-form textarea::-webkit-scrollbar { width: 5px; }
+    .custom-form textarea::-webkit-scrollbar-track { background: transparent; }
+    .custom-form textarea::-webkit-scrollbar-thumb {
+      background: rgba(124,58,237,0.45);
+      border-radius: 99px;
+    }
+    .custom-form textarea::-webkit-scrollbar-thumb:hover {
+      background: rgba(168,85,247,0.7);
+    }
+
+
+    /* Currency toggle budget field */
+    .budget-wrap {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .budget-wrap:focus-within {
+      border-color: var(--primary);
+      background: rgba(124,58,237,0.05);
+    }
+    .currency-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0 12px;
+      height: 100%;
+      background: rgba(124,58,237,0.12);
+      border-right: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
+      flex-shrink: 0;
+      min-width: 68px;
+      justify-content: center;
+    }
+    .currency-toggle:hover { background: rgba(124,58,237,0.22); }
+    .currency-label {
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.08em;
+      color: var(--primary-glow, #c084fc);
+      line-height: 1;
+    }
+    .currency-arrow {
+      font-size: 9px;
+      color: rgba(192,132,252,0.6);
+      transition: transform 0.2s;
+    }
+    .budget-wrap input {
+      flex: 1;
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 14px 14px !important;
+      color: white;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      outline: none;
+      width: 100%;
+    }
+    .budget-wrap input::placeholder { color: rgba(255,255,255,0.2); font-family: 'Sora', sans-serif; font-size: 13px; }
+
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 6px;
+    }
+    .custom-radio {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: #d4d4d8;
+    }
+    .custom-radio input { display: none; }
+    .radio-mark {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: border-color 0.3s;
+      flex-shrink: 0;
+    }
+    .radio-mark::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .custom-radio input:checked + .radio-mark { border-color: var(--primary); }
+    .custom-radio input:checked + .radio-mark::after { transform: scale(1); }
+
+    .redirect-notice {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-header { 
+        padding: 16px 20px; 
+      }
+      .contact-brand {
+        font-size: 18px;
+      }
+      .contact-body {
+        grid-template-columns: 1fr;
+        padding: 32px 20px 60px;
+        gap: 48px;
+      }
+      .contact-info { 
+        position: static; 
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-info h1 {
+        font-size: clamp(28px, 6vw, 42px);
+        margin-bottom: 16px;
+      }
+      .contact-info p {
+        margin-bottom: 28px;
+        font-size: 14px;
+      }
+      .trust-list {
+        align-items: flex-start;
+        text-align: left;
+        max-width: 380px;
+        width: 100%;
+      }
+      .form-card {
+        padding: 28px 20px;
+        border-radius: 20px;
+      }
+      .custom-form .form-group {
+        margin-bottom: 18px;
+      }
+      .radio-group {
+        gap: 12px;
+      }
+      .custom-radio {
+        font-size: 13px;
+      }
+      .direct-whatsapp-wrap {
+        align-items: center !important;
+        text-align: center !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .contact-header {
+        padding: 12px 16px;
+      }
+      .contact-body {
+        padding: 24px 16px 40px;
+        gap: 36px;
+      }
+      .form-card {
+        padding: 20px 16px;
+      }
+      .budget-wrap input {
+        padding: 12px 12px !important;
+        font-size: 12px;
+      }
+      .currency-toggle {
+        min-width: 60px;
+        padding: 0 8px;
+      }
+    }
+    
+    @keyframes nrv-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .nrv-loading-icon {
+      animation: nrv-spin 0.8s linear infinite;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    /* Success Card Styling */
+    .success-card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 10px;
+      animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .success-icon-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: #10b981;
+      box-shadow: 0 0 24px rgba(16, 185, 129, 0.15);
+    }
+
+    .success-icon-wrap span {
+      font-size: 38px;
+      font-variation-settings: 'FILL' 1, 'wght' 500;
+    }
+
+    .success-card h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: white;
+    }
+
+    .success-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 340px;
+      margin-bottom: 24px;
+    }
+
+    /* Direct WhatsApp Button style in Left Column */
+    .direct-whatsapp-wrap {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .direct-whatsapp-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .btn-whatsapp-direct {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37, 211, 102, 0.08);
+      border: 1px solid rgba(37, 211, 102, 0.2);
+      color: #25d366;
+      padding: 12px 24px;
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-whatsapp-direct:hover {
+      background: #25d366;
+      color: black;
+      border-color: #25d366;
+      box-shadow: 0 0 16px rgba(37, 211, 102, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* TYPEFORM CONVERSATIONAL FORM STYLE */
+    .conversational-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-height: 480px;
+      justify-content: space-between;
+    }
+
+    .conv-progress-header {
+      margin-bottom: 8px;
+    }
+
+    .conv-progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .conv-step-counter {
+      font-weight: 500;
+      color: white;
+    }
+
+    .conv-percent-complete {
+      color: var(--primary-glow, #c084fc);
+    }
+
+    .conv-progress-bar-bg {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .conv-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #7c3aed, #a855f7);
+      width: 12.5%;
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .conv-step {
+      display: none;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .conv-step.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Typeform Question Structure */
+    .conv-question-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .conv-question-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: var(--primary-glow, #c084fc);
+      font-weight: 700;
+      margin-top: 4px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .conv-arrow {
+      color: var(--primary);
+      font-size: 12px;
+    }
+
+    .conv-question-text {
+      font-size: clamp(18px, 4vw, 21px) !important;
+      font-weight: 700;
+      color: white;
+      line-height: 1.35;
+      margin: 0 !important;
+      letter-spacing: -0.02em;
+    }
+
+    .conv-question-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-left: 36px;
+      margin-bottom: 24px;
+    }
+
+    /* Inputs aligned with text offset */
+    .typeform-input-container, 
+    .typeform-options-grid {
+      margin-left: 36px;
+    }
+
+    @media (max-width: 580px) {
+      .typeform-input-container, 
+      .typeform-options-grid {
+        margin-left: 0;
+      }
+      .conv-question-sub {
+        margin-left: 0;
+      }
+    }
+
+    /* Text Input (Typeform-style minimal bottom line) */
+    .typeform-text-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0;
+      padding: 10px 0;
+      color: white;
+      font-family: 'Sora', sans-serif;
+      font-size: 18px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .typeform-text-input:focus {
+      border-bottom-color: var(--primary);
+    }
+
+    .typeform-text-input::placeholder {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Custom autocomplete/autofill styling to match premium dark theme */
+    .typeform-text-input:-webkit-autofill,
+    .typeform-text-input:-webkit-autofill:hover, 
+    .typeform-text-input:-webkit-autofill:focus, 
+    .typeform-text-input:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 100px #09090b inset !important;
+      -webkit-text-fill-color: #ffffff !important;
+      caret-color: #ffffff !important;
+      transition: background-color 5000s ease-in-out 0s;
+      border: none !important;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 0 !important;
+    }
+
+    .typeform-text-input:-webkit-autofill:focus {
+      border-bottom: 2px solid var(--primary) !important;
+    }
+
+    /* Option Item styled like keys */
+    .typeform-options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 4px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(124, 58, 237, 0.3) transparent;
+      scroll-behavior: smooth;
+      overscroll-behavior-y: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .typeform-options-grid::-webkit-scrollbar {
+      width: 4px;
+    }
+    .typeform-options-grid::-webkit-scrollbar-thumb {
+      background: rgba(124, 58, 237, 0.3);
+      border-radius: 4px;
+    }
+
+    .grid-columns-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 580px) {
+      .grid-columns-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .typeform-option-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 12px 16px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .typeform-option-item input[type="radio"] {
+      display: none;
+    }
+
+    .typeform-option-item:hover {
+      border-color: rgba(168, 85, 247, 0.4);
+      background: rgba(255, 255, 255, 0.04);
+      transform: translateY(-1px);
+    }
+
+    .typeform-option-item.selected {
+      border-color: var(--primary);
+      background: rgba(124, 58, 237, 0.08);
+      box-shadow: 0 0 15px rgba(124, 58, 237, 0.1);
+    }
+
+    /* Keyboard hotkey indicator inside options */
+    .typeform-option-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      width: 22px;
+      height: 22px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-glow, #c084fc);
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
+    }
+
+    .typeform-option-item:hover .typeform-option-key {
+      border-color: var(--primary-glow);
+    }
+
+    .typeform-option-item.selected .typeform-option-key {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .typeform-option-emoji {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+
+    .typeform-option-item:hover .typeform-option-emoji {
+      transform: scale(1.15);
+    }
+
+    .typeform-option-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #e4e4e7;
+      line-height: 1.4;
+    }
+
+    .typeform-option-item.selected .typeform-option-label {
+      color: white;
+      font-weight: 600;
+    }
+
+    /* Aceptar Button row */
+    .typeform-action-row {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 20px;
+      margin-left: 36px;
+    }
+
+    @media (max-width: 580px) {
+      .typeform-action-row {
+        margin-left: 0;
+      }
+    }
+
+    .typeform-btn-ok {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-family: 'Sora', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .typeform-btn-ok:hover {
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .typeform-btn-ok span {
+      font-size: 16px;
+    }
+
+    .typeform-hint {
+      font-size: 14px;
+      color: #a1a1aa;
+      margin-left: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .typeform-hint strong {
+      color: #ffffff;
+      background: linear-gradient(180deg, #2d2d30, #1b1b1d);
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      border-bottom: 3px solid var(--primary);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+      letter-spacing: 0.05em;
+      display: inline-block;
+      text-shadow: 0 0 5px rgba(168, 85, 247, 0.5);
+      animation: keycapPulse 2s infinite ease-in-out;
+    }
+
+    @keyframes keycapPulse {
+      0%, 100% {
+        border-color: rgba(168, 85, 247, 0.4);
+        box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+      }
+      50% {
+        border-color: var(--primary-glow);
+        box-shadow: 0 4px 20px rgba(168, 85, 247, 0.6);
+      }
+    }
+
+    /* Error Indication */
+    .conv-error-msg {
+      display: none;
+      color: #ef4444;
+      font-size: 11px;
+      margin-top: 8px;
+      margin-left: 36px;
+      font-weight: 500;
+      align-items: center;
+      gap: 4px;
+      animation: fadeIn 0.3s forwards;
+    }
+    .conv-error-msg::before {
+      content: 'error';
+      font-family: 'Material Symbols Outlined';
+      font-size: 14px;
+    }
+
+    .nrv-field-error .typeform-text-input {
+      border-color: #ef4444 !important;
+      background: rgba(239, 68, 68, 0.03) !important;
+    }
+
+    .nrv-field-error .conv-error-msg {
+      display: flex;
+    }
+
+    .shake {
+      animation: convShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+    }
+
+    @keyframes convShake {
+      10%, 90% { transform: translate3d(-1px, 0, 0); }
+      20%, 80% { transform: translate3d(2px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+      40%, 60% { transform: translate3d(4px, 0, 0); }
+    }
+
+    /* Navigation toolbar */
+    .conv-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .conv-btn-prev, .conv-btn-next, .conv-btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-family: 'Sora', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: none;
+      outline: none;
+      user-select: none;
+    }
+
+    .conv-btn-prev {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+    }
+
+    .conv-btn-prev:hover:not(.disabled) {
+      border-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .conv-btn-prev.disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .conv-btn-next {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+    }
+
+    .conv-btn-next:hover {
+      background: #8b5cf6;
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+    }
+
+    .conv-btn-submit {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+    }
+
+    .conv-btn-submit:hover:not(:disabled) {
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+    }
+
+    .conv-btn-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .conv-group-otro {
+      transition: all 0.3s ease;
+    }
+    
+    /* Loading Icon Spin */
+    .nrv-loading-icon {
+      animation: convSpin 1s linear infinite;
+      display: inline-block;
+    }
+    @keyframes convSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .typeform-stacked-inputs {
+      margin-left: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .typeform-stacked-inputs .conv-input-wrap {
+      width: 100%;
+    }
+    .typeform-stacked-inputs .conv-error-msg {
+      margin-left: 0;
+    }
+    .custom-dropdown {
+      position: relative;
+      width: 100%;
+      user-select: none;
+    }
+    .custom-dropdown-trigger {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: white;
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .custom-dropdown-trigger:hover {
+      border-color: rgba(168, 85, 247, 0.4);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .custom-dropdown.open .custom-dropdown-trigger {
+      border-color: var(--primary);
+      background: rgba(124, 58, 237, 0.05);
+      box-shadow: 0 0 15px rgba(124, 58, 237, 0.15);
+    }
+    .custom-dropdown-placeholder {
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .custom-dropdown-placeholder.has-value {
+      color: white;
+    }
+    .custom-dropdown-trigger .dropdown-arrow {
+      color: var(--text-muted);
+      font-size: 20px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .custom-dropdown.open .dropdown-arrow {
+      transform: rotate(180deg);
+      color: var(--primary-glow);
+    }
+    .custom-dropdown-options {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: rgba(18, 18, 20, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      margin: 0;
+      padding: 6px;
+      list-style: none;
+      z-index: 100;
+      opacity: 0;
+      transform: translateY(-10px) scale(0.98);
+      pointer-events: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      max-height: 310px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(124, 58, 237, 0.3) transparent;
+      scroll-behavior: smooth;
+      overscroll-behavior-y: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+    .custom-dropdown-options::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-dropdown-options::-webkit-scrollbar-thumb {
+      background: rgba(124, 58, 237, 0.3);
+      border-radius: 4px;
+    }
+    .custom-dropdown.open .custom-dropdown-options {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: all;
+    }
+    .custom-dropdown-option {
+      padding: 12px 14px;
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      color: #d4d4d8;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+    }
+    .custom-dropdown-option:hover {
+      background: rgba(124, 58, 237, 0.1);
+      color: white;
+    }
+    .custom-dropdown-option.selected {
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+    .custom-dropdown-option .option-emoji {
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 580px) {
+      .typeform-stacked-inputs {
+        margin-left: 0;
+      }
+      .typeform-hint {
+        display: none !important;
+      }
+    }
+    @media (min-width: 769px) {
+      .conv-btn-next {
+        display: none !important;
+      }
+    }
+
+    /* Loading Card Premium Styling */
+    .loading-card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 10px;
+      animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      min-height: 380px;
+    }
+
+    .premium-loader-spinner {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 24px;
+    }
+
+    .premium-loader-ring {
+      position: absolute;
+      inset: 0;
+      border: 3px solid rgba(124, 58, 237, 0.08);
+      border-radius: 50%;
+    }
+
+    .premium-loader-gradient {
+      position: absolute;
+      inset: 0;
+      border: 3px solid transparent;
+      border-top-color: var(--primary);
+      border-right-color: var(--primary-light, #a855f7);
+      border-radius: 50%;
+      animation: loaderSpin 0.8s linear infinite;
+    }
+
+    .premium-loader-glow {
+      position: absolute;
+      inset: -4px;
+      border: 3px solid transparent;
+      border-top-color: var(--primary-glow, #c084fc);
+      border-radius: 50%;
+      filter: blur(4px);
+      opacity: 0.6;
+      animation: loaderSpin 0.8s linear infinite;
+    }
+
+    @keyframes loaderSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-card .loader-text {
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-top: 16px;
+      animation: textPulse 1.2s ease-in-out infinite;
+    }
+
+    @keyframes textPulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+
+    /* Estilos para el selector de presupuesto manual y moneda */
+    .budget-input-group {
+      display: flex;
+      gap: 12px;
+      align-items: stretch;
+      max-width: 420px;
+      margin-bottom: 16px;
+      margin-left: 36px;
+    }
+
+    .budget-input-group .typeform-input-container {
+      margin-left: 0 !important;
+      flex: 1;
+      position: relative;
+    }
+
+    .budget-currency-prefix {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.4);
+      font-family: 'Sora', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      pointer-events: none;
+      transition: color 0.3s;
+    }
+
+    .budget-input-group .typeform-text-input {
+      padding-left: 32px !important;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .budget-input-group .typeform-text-input:focus ~ .budget-currency-prefix {
+      color: var(--primary);
+    }
+
+    .currency-selector {
+      display: flex;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .currency-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: #a1a1aa;
+      border-radius: 8px;
+      padding: 0 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .currency-btn.active {
+      background: rgba(124, 58, 237, 0.16) !important;
+      border-color: rgba(168, 85, 247, 0.3) !important;
+      color: #c084fc !important;
+      box-shadow: 0 0 10px rgba(124, 58, 237, 0.1);
+    }
+
+    .currency-btn:hover:not(.active) {
+      color: white;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 580px) {
+      .budget-input-group {
+        margin-left: 0 !important;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .currency-selector {
+        justify-content: center;
+        padding: 6px;
+      }
+      .currency-btn {
+        flex: 1;
+        padding: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Aladdin page transition overlay -->
+  <div class="page-transition" id="page-transition"></div>
+
+  <div class="contact-page">
+    <header class="contact-header">
+      <a href="/" class="contact-brand" style="text-decoration: none; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <span>NRVERTEX</span>
+        <span style="font-family:'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent-primary); border: 1px solid var(--accent-primary); padding: 2px 5px; border-radius: 4px; letter-spacing: 0.05em; font-weight: bold;">← INICIO</span>
+      </a>
+      <a href="index.html" class="contact-back">
+        <span class="material-symbols-outlined" style="font-size:16px;">arrow_back</span>
+        Volver al inicio
+      </a>
+    </header>
+
+    <main class="contact-body">
+      <!-- LEFT: Info -->
+      <div class="contact-info" id="contact-info">
+        <span class="pill-badge label-caps">Agendá una consulta</span>
+        <h1>Contanos Tu Negocio. <span class="italic-accent">Te Mostramos Cómo</span> Aparecer Primero En Google.</h1>
+        <p>Completá el formulario de contacto para iniciar tu estrategia de SEO local CABA, dominar el posicionamiento en Google Maps en Buenos Aires y recibir asesoramiento gratuito en menos de 12 horas.</p>
+        <ul class="trust-list">
+          <li>
+            <span class="material-symbols-outlined">check_circle</span>
+            Consulta inicial 100% gratuita y sin compromiso
+          </li>
+          <li>
+            <span class="material-symbols-outlined">check_circle</span>
+            Resultados garantizados en los primeros 90 días
+          </li>
+          <li>
+            <span class="material-symbols-outlined">check_circle</span>
+            Sin contratos de largo plazo
+          </li>
+          <li>
+            <span class="material-symbols-outlined">check_circle</span>
+            Nos ocupamos del 100% del trabajo digital
+          </li>
+          <li>
+            <span class="material-symbols-outlined">check_circle</span>
+            Atención directa y personalizada
+          </li>
+        </ul>
+        <div class="direct-whatsapp-wrap">
+          <span class="direct-whatsapp-label">¿Preferís chatear directamente?</span>
+          <a href="https://wa.me/5491172383806?text=%C2%A1Hola%21%20Vengo%20desde%20la%20p%C3%A1gina%20web%20y%20quiero%20hacer%20una%20consulta%20directa." class="btn-whatsapp-direct" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+            </svg>
+            Chatear por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form-wrap" id="contact-form-wrap">
+        <div class="form-card">
+          <form id="nrv-contact-form" class="conversational-form" data-wa-number="5491172383806">
+            <!-- Header de Progreso -->
+            <div class="conv-progress-header">
+              <div class="conv-progress-info">
+                <span class="conv-step-counter">PASO <span id="conv-current-step">1</span> DE 3</span>
+                <span class="conv-percent-complete" id="conv-percent">33%</span>
+              </div>
+              <div class="conv-progress-bar-bg">
+                <div data-progress class="conv-progress-bar" style="width: 33.3%;"></div>
+              </div>
+            </div>
+
+            <!-- Paso 1: Datos de Contacto -->
+            <div class="conv-step active" data-step="1">
+              <div class="conv-question-row">
+                <div class="conv-question-number">1 <span class="conv-arrow">→</span></div>
+                <h2 class="conv-question-text">¿Con quién hablamos? *</h2>
+              </div>
+              <p class="conv-question-sub">Ingresá tus datos de contacto para coordinar la consulta inicial.</p>
+              
+              <div class="typeform-stacked-inputs">
+                <div class="conv-input-wrap">
+                  <label class="conv-input-label" style="display: block; font-size: 12px; font-weight: 600; color: #a1a1aa; margin-bottom: 6px;">Nombre Completo *</label>
+                  <div class="typeform-input-container">
+                    <input type="text" name="nombre" placeholder="Escribí tu nombre y apellido" required class="typeform-text-input" autocomplete="name">
+                  </div>
+                  <div class="conv-error-msg">Por favor, ingresá tu nombre.</div>
+                </div>
+
+                <div class="conv-input-wrap">
+                  <label class="conv-input-label" style="display: block; font-size: 12px; font-weight: 600; color: #a1a1aa; margin-bottom: 6px;">Correo Electrónico *</label>
+                  <div class="typeform-input-container">
+                    <input type="email" name="email" placeholder="nombre@correo.com" required class="typeform-text-input" autocomplete="email">
+                  </div>
+                  <div class="conv-error-msg">Ingresá un correo electrónico válido.</div>
+                </div>
+
+                <div class="conv-input-wrap">
+                  <label class="conv-input-label" style="display: block; font-size: 12px; font-weight: 600; color: #a1a1aa; margin-bottom: 6px;">Número de WhatsApp *</label>
+                  <div class="typeform-input-container">
+                    <input type="tel" name="telefono" placeholder="+54 9 11 1234-5678" required class="typeform-text-input" inputmode="numeric" pattern="[0-9\s\-+]*" data-phone-input autocomplete="tel">
+                  </div>
+                  <div class="conv-error-msg">Ingresá un número de WhatsApp válido.</div>
+                </div>
+              </div>
+
+              <div class="typeform-action-row">
+                <button type="button" class="typeform-btn-ok" data-ok-btn>
+                  Aceptar
+                  <span class="material-symbols-outlined">check</span>
+                </button>
+                <span class="typeform-hint">presioná <strong>Enter ↵</strong></span>
+              </div>
+            </div>
+
+            <!-- Paso 2: Tu Negocio -->
+            <div class="conv-step" data-step="2">
+              <div class="conv-question-row">
+                <div class="conv-question-number">2 <span class="conv-arrow">→</span></div>
+                <h2 class="conv-question-text" id="question-negocio">¡Un gusto! ¿A qué se dedica tu negocio? *</h2>
+              </div>
+              <p class="conv-question-sub">Seleccioná tu rubro y decinos tu web si tenés una (opcional).</p>
+              
+              <div class="typeform-options-grid grid-columns-2" data-lenis-prevent>
+                <label class="typeform-option-item" data-key="A">
+                  <input type="radio" name="rubro" value="Florería / Vivero" required>
+                  <span class="typeform-option-key">A</span>
+                  <span class="typeform-option-label">Florería / Vivero</span>
+                </label>
+                <label class="typeform-option-item" data-key="B">
+                  <input type="radio" name="rubro" value="Construcción / Reformas">
+                  <span class="typeform-option-key">B</span>
+                  <span class="typeform-option-label">Construcción / Reformas</span>
+                </label>
+                <label class="typeform-option-item" data-key="C">
+                  <input type="radio" name="rubro" value="Restaurant / Gastronomía">
+                  <span class="typeform-option-key">C</span>
+                  <span class="typeform-option-label">Restaurant / Gastronomía</span>
+                </label>
+                <label class="typeform-option-item" data-key="D">
+                  <input type="radio" name="rubro" value="Salud / Clínica / Consultorio">
+                  <span class="typeform-option-key">D</span>
+                  <span class="typeform-option-label">Salud / Clínica / Consultorio</span>
+                </label>
+                <label class="typeform-option-item" data-key="E">
+                  <input type="radio" name="rubro" value="Comercio / Tienda de barrio">
+                  <span class="typeform-option-key">E</span>
+                  <span class="typeform-option-label">Comercio / Tienda de barrio</span>
+                </label>
+                <label class="typeform-option-item" data-key="F">
+                  <input type="radio" name="rubro" value="Servicios para el hogar">
+                  <span class="typeform-option-key">F</span>
+                  <span class="typeform-option-label">Servicios para el hogar</span>
+                </label>
+                <label class="typeform-option-item" data-key="G">
+                  <input type="radio" name="rubro" value="Otro">
+                  <span class="typeform-option-key">G</span>
+                  <span class="typeform-option-label">Otro / No listado</span>
+                </label>
+              </div>
+
+              <!-- Campo de texto para otro rubro (se mostrará condicionalmente) -->
+              <div class="conv-group-otro" id="group_otro_rubro" style="display: none; opacity: 0; transform: translateY(-10px); margin-top: 12px; margin-left: 36px;">
+                <div class="conv-input-wrap">
+                  <div class="typeform-input-container">
+                    <input type="text" name="otro_rubro" placeholder="Especificá tu rubro" class="typeform-text-input">
+                  </div>
+                  <div class="conv-error-msg">Por favor, escribí tu rubro.</div>
+                </div>
+              </div>
+              <div class="conv-error-msg" id="rubro-error" style="margin-left: 36px;">Seleccioná un rubro para continuar.</div>
+
+              <!-- Entrada de Sitio Web Opcional -->
+              <div class="conv-input-wrap" style="margin-top: 24px; margin-left: 36px;">
+                <label class="conv-input-label" style="display: block; font-size: 12px; font-weight: 600; color: #a1a1aa; margin-bottom: 6px;">Sitio Web Actual (Opcional)</label>
+                <div class="typeform-input-container">
+                  <input type="text" name="web" placeholder="www.tunegocio.com" class="typeform-text-input">
+                </div>
+              </div>
+
+              <div class="typeform-action-row">
+                <button type="button" class="typeform-btn-ok" data-ok-btn>
+                  Aceptar
+                  <span class="material-symbols-outlined">check</span>
+                </button>
+                <span class="typeform-hint">presioná <strong>Enter ↵</strong></span>
+              </div>
+            </div>
+
+            <!-- Paso 3: Tu Proyecto e Inversión -->
+            <div class="conv-step" data-step="3">
+              <div class="conv-question-row">
+                <div class="conv-question-number">3 <span class="conv-arrow">→</span></div>
+                <h2 class="conv-question-text">Definamos objetivos y presupuesto *</h2>
+              </div>
+              <p class="conv-question-sub">Decinos tu principal objetivo y presupuesto mensual aproximado.</p>
+
+              <!-- Principal Objetivo Dropdown -->
+              <div class="conv-input-wrap" style="margin-left: 36px; margin-bottom: 24px;">
+                <label class="conv-input-label" style="display: block; font-size: 12px; font-weight: 600; color: #a1a1aa; margin-bottom: 8px;">¿Cuál es tu principal objetivo? *</label>
+                <div class="custom-dropdown" id="dropdown-objetivo">
+                  <input type="hidden" name="objetivo" required value="">
+                  <div class="custom-dropdown-trigger" tabindex="0">
+                    <span class="custom-dropdown-placeholder">Seleccioná tu objetivo principal</span>
+                    <span class="material-symbols-outlined dropdown-arrow">expand_more</span>
+                  </div>
+                  <div class="custom-dropdown-options" data-lenis-prevent>
+                    <div class="custom-dropdown-option" data-value="Conseguir más clientes nuevos">
+                      <span class="option-text">Conseguir más clientes nuevos</span>
+                    </div>
+                    <div class="custom-dropdown-option" data-value="Aparecer primero en Google Maps y SEO Local">
+                      <span class="option-text">Aparecer primero en Google Maps y SEO Local</span>
+                    </div>
+                    <div class="custom-dropdown-option" data-value="Tener una página web de alta conversión">
+                      <span class="option-text">Tener una página web de alta conversión</span>
+                    </div>
+                    <div class="custom-dropdown-option" data-value="SEO avanzado y seguimiento continuo mes a mes">
+                      <span class="option-text">SEO avanzado y seguimiento continuo</span>
+                    </div>
+                    <div class="custom-dropdown-option" data-value="Aumentar mi facturación">
+                      <span class="option-text">Aumentar mi facturación</span>
+                    </div>
+                    <div class="custom-dropdown-option" data-value="No sé por dónde empezar">
+                      <span class="option-text">No sé por dónde empezar</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="conv-error-msg" id="objetivo-error">Seleccioná un objetivo para continuar.</div>
+              </div>
+
+              <!-- Presupuesto Mensual Cards -->
+              <div class="conv-input-wrap" style="margin-left: 36px; margin-bottom: 12px;">
+                <label class="conv-input-label" style="display: block; font-size: 12px; font-weight: 600; color: #a1a1aa; margin-bottom: 8px;">¿Cuál es tu presupuesto mensual aproximado? *</label>
+                <div class="budget-input-group">
+                  <div class="typeform-input-container">
+                    <span class="budget-currency-prefix">$</span>
+                    <input type="text" id="presupuesto-monto" placeholder="Monto mensual (ej. 300)" class="typeform-text-input" style="width: 100%;">
+                  </div>
+                  <div class="currency-selector">
+                    <button type="button" class="currency-btn active" data-currency="USD">USD</button>
+                    <button type="button" class="currency-btn" data-currency="ARS">ARS</button>
+                  </div>
+                </div>
+                <input type="hidden" name="presupuesto" id="presupuesto-hidden" required value="">
+                <div class="conv-error-msg" id="presupuesto-error">Por favor, ingresá un monto para continuar.</div>
+              </div>
+            </div>
+
+            <!-- Navegación -->
+            <div class="conv-navigation">
+              <button type="button" class="conv-btn-prev disabled" id="conv-btn-prev">
+                <span class="material-symbols-outlined" style="font-size:16px;">arrow_back</span>
+                Atrás
+              </button>
+              <button type="button" class="conv-btn-next" id="conv-btn-next">
+                Siguiente
+                <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span>
+              </button>
+              <button type="submit" class="conv-btn-submit" id="conv-btn-submit" style="display: none;">
+                Enviar Solicitud
+                <span class="material-symbols-outlined" style="font-size:16px;">send</span>
+              </button>
+            </div>
+          </form>
+          
+          <!-- Loading State (Hidden by default) -->
+          <div id="loading-card" class="loading-card" style="display: none;">
+            <div class="premium-loader-spinner">
+              <div class="premium-loader-ring"></div>
+              <div class="premium-loader-gradient"></div>
+              <div class="premium-loader-glow"></div>
+            </div>
+            <p class="loader-text">Enviando solicitud...</p>
+          </div>
+
+          <!-- Success State (Hidden by default) -->
+          <div id="success-card" class="success-card" style="display: none;">
+            <div class="success-icon-wrap">
+              <span class="material-symbols-outlined">check_circle</span>
+            </div>
+            <h2>¡Solicitud Recibida!</h2>
+            <p>Muchas gracias por contactarnos. Tu información fue enviada con éxito. Nos pondremos en contacto con vos en menos de 12 horas.</p>
+            <a href="index.html" class="btn-primary" style="margin-top: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+              <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+              Volver al inicio
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Aladdin page entrance
+    window.addEventListener('load', () => {
+      const overlay = document.getElementById('page-transition');
+      setTimeout(() => {
+        overlay.classList.add('done');
+        setTimeout(() => {
+          document.getElementById('contact-info').classList.add('revealed');
+          document.getElementById('contact-form-wrap').classList.add('revealed');
+        }, 100);
+      }, 50);
+    });
+
+    // Aladdin exit transition for back/brand links
+    document.querySelectorAll('a[href="index.html"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const overlay = document.getElementById('page-transition');
+        overlay.style.transition = 'opacity 0.45s ease';
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'all';
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 450);
+      });
+    });
+  </script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

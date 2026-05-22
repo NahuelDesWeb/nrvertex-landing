@@ -1,0 +1,271 @@
+================================================================================
+           INFORME DE CONTEXTO COMERCIAL Y ESTRATEGIA DE SEO AVANZADO
+                                NRVERTEX AGENCIA
+================================================================================
+
+Este documento contiene un análisis exhaustivo y estructurado de la plataforma web 
+de NRVERTEX. Funciona como un mapa de contexto comercial, técnico y estratégico 
+para comprender qué servicios se ofrecen, cómo se estructuran las páginas, qué 
+elementos de experiencia de usuario (UX/UI) marcan la diferencia y cómo se puede 
+escalar el posicionamiento en buscadores (SEO) de forma avanzada en Argentina.
+
+---
+
+INDICE:
+1. RESUMEN COMERCIAL DE NRVERTEX (PROPUESTA DE VALOR Y GARANTÍA)
+2. ESTRUCTURA Y ANÁLISIS DE PÁGINAS (PÁGINA POR PÁGINA)
+3. DETALLE DE SERVICIOS Y METODOLOGÍA DE TRABAJO
+4. ANÁLISIS DE LA EXPERIENCIA DE USUARIO (UX/UI) Y APARTADO TÉCNICO
+5. GUÍA DE SEO LOCAL Y AVANZADO PARA EL MERCADO ARGENTINO / CABA
+6. GLOSARIO DE TÉRMINOS CLAVE PARA EL CLIENTE
+
+================================================================================
+1. RESUMEN COMERCIAL DE NRVERTEX (PROPUESTA DE VALOR Y GARANTÍA)
+================================================================================
+
+NRVERTEX es una agencia boutique de SEO Local y Optimización de Conversión 
+especializada en el mercado argentino (con foco inicial en la Ciudad Autónoma de 
+Buenos Aires - CABA). Su misión principal es conectar comercios físicos y empresas 
+de servicios locales con sus clientes ideales de manera orgánica.
+
+* Propuesta de Valor Única (UVP):
+  "Llevar a tu negocio a los primeros 3 resultados de búsqueda de Google Maps 
+  en menos de 90 días, atrayendo tráfico e interacciones de alto valor comercial 
+  sin depender de presupuestos publicitarios en Google Ads o Facebook Ads."
+
+* La Garantía NRVERTEX:
+  Una de las mayores objeciones del cliente final es el riesgo de la inversión. 
+  NRVERTEX lo mitiga con una garantía explícita:
+  "Si en 90 días tu negocio no aparece en el top 3 de los resultados locales, 
+  la agencia continúa trabajando de forma gratuita y sin costo adicional hasta 
+  lograr el objetivo."
+
+* Escasez y Urgencia (Scarcity):
+  El sitio utiliza un disparador psicológico de escasez real en la barra superior:
+  "Cupos limitados. Solo se aceptan 3 clientes nuevos por mes." Esto eleva el valor 
+  percibido de la atención personalizada y el servicio a medida.
+
+================================================================================
+2. ESTRUCTURA Y ANÁLISIS DE PÁGINAS (PÁGINA POR PÁGINA)
+================================================================================
+
+El sitio está estructurado de forma modular y estática en HTML5, CSS3 vanilla y 
+Javascript para maximizar la velocidad de carga (Core Web Vitals). Las páginas que 
+componen la web son:
+
+--------------------------------------------------------------------------------
+A) PÁGINA DE INICIO (index.html)
+--------------------------------------------------------------------------------
+Es la página de aterrizaje principal. Está diseñada siguiendo técnicas de 
+copywriting persuasivo enfocadas en la conversión directa hacia el WhatsApp/Formulario.
+
+Secciones Clave:
+1. Barra de Escasez: Muestra dinámicamente los cupos disponibles de nuevos clientes.
+2. Cabecera (Navbar): Logotipo y enlaces internos rápidos con botón de llamada a la acción.
+3. Hero (Pantalla Principal): 
+   - Título impactante con tipografía optimizada.
+   - Subtítulo enfocado en la simplicidad (sin trucos, sin anuncios, sin esfuerzo).
+   - Llamado a la acción principal ("Agendá por WhatsApp") y secundario para más información.
+4. Casos de Éxito: 
+   - Tarjetas interactivas de clientes reales de CABA (FloreríaLiz y AlbornozObras).
+   - Datos visuales de alto impacto: TOP 1 en Google Maps, llamadas generadas, clics de indicaciones y estimación de tratos cerrados.
+5. Sección de Servicios: 
+   - Explicación de los 3 pilares del servicio: Posicionamiento en el Top 3, atracción de clientes orgánicos en redes y mantenimiento mensual activo.
+6. Proceso en 3 Pasos: Investigación, Atracción e Implementación.
+7. Comparativa de Mercado (NRVERTEX vs Otras Agencias):
+   - Muestra las desventajas típicas de las agencias tradicionales (contratos largos, comunicación lenta) frente a los beneficios de NRVERTEX (atención personalizada, precios justos a medida, garantía de resultados).
+8. Testimonios: Citas directas y reales de los dueños de los negocios beneficiados.
+9. Preguntas Frecuentes (FAQ):
+   - Acordeones interactivos que resuelven dudas sobre el tiempo de entrega de resultados, el involucramiento del cliente y la parte técnica.
+   *Nota*: Se ha removido todo indicador visible de precios pre-establecidos para impulsar la llamada de estrategia personalizada.
+
+--------------------------------------------------------------------------------
+B) FORMULARIO DE CONTACTO (contacto.html)
+--------------------------------------------------------------------------------
+Es un funnel conversacional interactivo tipo "Typeform" que guía al usuario en una 
+experiencia fluida paso por paso.
+
+Paso 1: Datos Personales e Identidad.
+        - Campos obligatorios: Nombre Completo, Email y Teléfono (WhatsApp).
+        - Validación inteligente: Solo números en el campo telefónico y formato de email.
+Paso 2: Datos de Negocio.
+        - Saludo personalizado dinámico: Utiliza el nombre ingresado en el paso anterior.
+        - Campo interactivo: Rubro de Negocio (con tarjetas rápidas: Florería/Vivero, Construcción, Gastronomía, Salud, Comercio, Servicios y una opción "Otro" que despliega un campo de texto extra).
+        - Campo obligatorio: Objetivo principal del negocio (elegido mediante un dropdown premium).
+        - Campo opcional: Sitio Web actual.
+Paso 3: Definición de Presupuesto.
+        - El selector rígido de presupuestos fijos fue reemplazado por un sistema manual flexible.
+        - Input de texto numérico (`#presupuesto-monto`) que aplica formato de miles en tiempo real (por ejemplo, al escribir `150000` se muestra visualmente como `150.000`).
+        - Selector de Moneda: Botones con estilo premium para cambiar dinámicamente entre USD (Dólares) y ARS (Pesos Argentinos).
+        - Botón de envío final integrado con la pasarela Web3Forms (notificación instantánea vía Gmail/Inbox con los detalles ordenados del Lead).
+
+--------------------------------------------------------------------------------
+C) ESTUDIO DE CASO 1: FLORERÍALIZ (src/casos/florerializ.html)
+--------------------------------------------------------------------------------
+Un caso de éxito en el sector de comercio físico local (Floristería en Villa del Parque, CABA).
+- Contexto de partida: Negocio invisible en internet antes de la optimización.
+- Estrategia aplicada: Creación y optimización profunda del perfil de Google Business Profile (GBP), consistencia NAP (Nombre, Dirección, Teléfono), reseñas locales e imágenes geoetiquetadas.
+- Resultados logrados: 
+  - Posicionamiento TOP 1 en Google Maps en Villa del Parque en solo 60 días.
+  - +114 llamadas directas mensuales desde el perfil.
+  - +487 clics de indicaciones para llegar al local físico.
+  - Cero pesos invertidos en anuncios pagos de Google Ads.
+  - Facturación estimada de más de $8.3M ARS en ventas orgánicas cerradas.
+
+--------------------------------------------------------------------------------
+D) ESTUDIO DE CASO 2: ALBORNOZ OBRAS (src/casos/albornoz-obras.html)
+--------------------------------------------------------------------------------
+Un caso de éxito en el sector de servicios a domicilio de alto valor (Construcción y Reformas en CABA).
+- Contexto de partida: Sector de alta competencia con agencias locales pagando sumas elevadas por clic en Google Ads.
+- Estrategia aplicada: Optimización semántica del perfil para búsquedas transaccionales (ej: "empresa de reformas en CABA", "remodelación de cocinas"), desarrollo de autoridad local y gestión de reputación (reseñas de clientes satisfechos).
+- Resultados logrados:
+  - Incremento del 1.171% en las interacciones mensuales del perfil.
+  - +19 llamadas directas y +70 clics de rutas desde Google Maps en 90 días.
+  - Generación de leads de alto valor (presupuestos de obras medianas y grandes).
+  - Cero pesos invertidos en anuncios pagos de Google Ads.
+
+================================================================================
+3. DETALLE DE SERVICIOS Y METODOLOGÍA DE TRABAJO
+================================================================================
+
+NRVERTEX no vende simple "diseño web" o "manejo de redes"; vende atracción de 
+clientes locales. Sus servicios se dividen en tres áreas complementarias:
+
+1. Optimización del Perfil de Google Maps (Google Business Profile - GBP):
+   - Configuración técnica y semántica completa de la ficha.
+   - Categorización principal y secundaria adaptada a los términos de búsqueda más rentables del negocio en su barrio.
+   - Creación de publicaciones periódicas optimizadas geográficamente.
+   - Estrategia estructurada para la solicitud y gestión de reseñas de 5 estrellas.
+
+2. Diseño Web Orientado a Conversión y Tráfico Orgánico:
+   - Sitios web ultra rápidos que actúan como "Landing Pages".
+   - Optimización técnica para dispositivos móviles (donde se realiza el 85% de las búsquedas locales).
+   - Estructuración de llamadas a la acción directas hacia WhatsApp.
+
+3. Mantenimiento y Auditoría Mensual:
+   - Seguimiento analítico de métricas reales (llamadas, rutas y visitas al sitio).
+   - Actualización constante de imágenes y contenidos geoetiquetados para enviar señales continuas de actividad al algoritmo de Google.
+
+================================================================================
+4. ANÁLISIS DE LA EXPERIENCIA DE USUARIO (UX/UI) Y APARTADO TÉCNICO
+================================================================================
+
+Para proyectar la imagen de una agencia premium digital de alta tecnología, 
+NRVERTEX cuenta con soluciones de desarrollo a medida aplicadas a la interfaz:
+
+* Evitación de FOUC (Flash of Unstyled Content):
+  Para prevenir el parpadeo blanco/sin estilos en la carga inicial y transiciones 
+  entre páginas, se inyectó un script crítico y síncrono al inicio del `<head>`. 
+  Esto evalúa el estado de navegación en `sessionStorage` y mantiene el fondo 
+  negro oscuro del DOM antes del primer pintado (FCP), garantizando transiciones 
+  de página fluidas y cinemáticas.
+
+* Cursor Customizado Magnético:
+  La web posee un cursor inteligente desarrollado con GSAP que se adapta al 
+  contenido. Al posarse sobre botones de llamada a la acción y enlaces clave, 
+  estos atraen magnéticamente el cursor con una animación amortiguada sin 
+  vibraciones. Al pasar por títulos grandes (`h1`, `h2`), el cursor crece y 
+  aplica un efecto de inversión de color (lente de diferencia) sobre la tipografía.
+
+* Formulario con Validación y Formateo en Tiempo Real:
+  El campo numérico de presupuesto permite ingresar montos sin límites fijos. 
+  La experiencia del usuario es cómoda gracias a la inclusión de separadores 
+  de miles dinámicos (puntos) que facilitan la lectura inmediata (ej. `250.000`) 
+  y un selector de moneda (USD/ARS) que previene errores de interpretación.
+
+================================================================================
+5. GUÍA DE SEO LOCAL Y AVANZADO PARA EL MERCADO ARGENTINO / CABA
+================================================================================
+
+Para mejorar el SEO de forma avanzada usando este informe, debes basar tu 
+investigación en los siguientes enfoques estratégicos específicos para Argentina:
+
+--------------------------------------------------------------------------------
+A) SEO Semántico e Intención de Búsqueda Local (Keyword Research)
+--------------------------------------------------------------------------------
+El usuario argentino busca de forma muy característica y coloquial. Tu contenido 
+debe reflejar estas intenciones de búsqueda transaccional.
+
+1. Búsquedas de Rubro + Zona:
+   - Ejemplo: "pintor en Colegiales", "florería cerca de Villa del Parque", "reformas de cocinas Palermo".
+   - Estrategia: Cada página del sitio debe mapear estas combinaciones. Utiliza 
+     etiquetas de encabezado `<h2>` e `<h3>` con combinaciones específicas de 
+     barrios (CABA: Belgrano, Palermo, Villa del Parque, Flores, Caballito, etc.).
+
+2. Búsquedas por Proximidad ("cerca de mí" o "cerca"):
+   - Google utiliza el GPS del móvil para mostrar resultados de Google Maps. 
+   - Estrategia: Para posicionar un comercio en estas búsquedas, es vital 
+     incluir el Nombre de la Calle, Altura, Barrio, Código Postal y Zona dentro del 
+     cuerpo del texto (Footer o sección de contacto). Además, incluir hitos urbanos 
+     cercanos (por ejemplo: "a dos cuadras de Plaza Arenales" o "cerca de la estación Villa del Parque").
+
+--------------------------------------------------------------------------------
+B) Optimización NAP (Name, Address, Phone) y Consistencia
+--------------------------------------------------------------------------------
+La consistencia de los datos en internet es uno de los factores de posicionamiento 
+más importantes para Google Business Profile.
+
+- Estrategia: El nombre de la empresa, su dirección exacta y su teléfono de 
+  contacto deben estar escritos exactamente igual en la landing page, en la 
+  ficha de Google Maps, y en directorios locales argentinos (Páginas Amarillas, 
+  Guía Local, Yelp, perfiles de redes sociales como Facebook o Instagram).
+  Cualquier discrepancia (por ejemplo, escribir "Av. Beiró 3200" en la web y 
+  "Francisco Beiró 3202" en Maps) confunde a los rastreadores de Google y diluye 
+  la autoridad de posicionamiento.
+
+--------------------------------------------------------------------------------
+C) Datos Estructurados Schema (Schema Markup JSON-LD)
+--------------------------------------------------------------------------------
+Los motores de búsqueda leen el código JSON-LD para entender exactamente qué 
+entidades representa la página web.
+
+1. Schema LocalBusiness / ProfessionalService:
+   - Debe implementarse en `index.html` detallando la geolocalización exacta 
+     (coordenadas de latitud y longitud de CABA), horario de atención, área de 
+     servicio (CABA, Buenos Aires, Argentina), y el número de teléfono con 
+     código de país (+54 9 11 ...).
+
+2. Schema FAQPage:
+   - Utilizado para mostrar acordeones de preguntas directamente en la página de 
+     resultados de búsqueda (SERP) de Google, aumentando drásticamente la tasa 
+     de clics (CTR).
+   *Nota*: El Schema FAQPage de NRVERTEX actualmente cuenta con 4 preguntas 
+   claves enfocadas en el servicio, habiéndose removido el precio explícito.
+
+--------------------------------------------------------------------------------
+D) Factores de Conversión y Señales de Experiencia de Usuario (Core Web Vitals)
+--------------------------------------------------------------------------------
+Google premia los sitios web rápidos y estables donde los usuarios no se van 
+inmediatamente (Bounce Rate bajo).
+
+1. Optimización LCP (Largest Contentful Paint):
+   - Las imágenes clave como las capturas de pantalla de los perfiles de Maps 
+     deben estar optimizadas en formato moderno WebP o AVIF para pesar menos de 100 KB.
+   - Evita cargar scripts de Javascript pesados que bloqueen el renderizado inicial.
+
+2. Respuestas a Dispositivos Móviles (Mobile-First):
+   - El 90% del tráfico a negocios locales proviene de celulares. El diseño del 
+     formulario conversacional y la fluidez de carga deben testearse con velocidades 
+     de red móviles promedio (conexión 4G en Buenos Aires).
+
+================================================================================
+6. GLOSARIO DE TÉRMINOS CLAVE PARA EL CLIENTE
+================================================================================
+
+Cuando hables con un cliente o prepares nuevos artículos de blog de SEO, te será 
+útil manejar esta terminología:
+
+- Google Business Profile (GBP): Anteriormente llamado Google Mi Negocio. Es la 
+  ficha oficial en Google Maps que permite a los clientes encontrar la ubicación, 
+  horarios, teléfono e imágenes de una empresa.
+- Local Pack: El bloque de tres perfiles de Google Maps destacados que aparece 
+  en la parte superior de los resultados de búsqueda convencionales de Google.
+- NAP Consistencia: La uniformidad de Nombre, Dirección y Teléfono de la empresa 
+  a lo largo de todo internet.
+- Lead: Un cliente potencial interesado que ha completado un formulario de 
+  contacto, enviado un WhatsApp o realizado una llamada.
+- SEO On-Page: La optimización del contenido y la estructura del código interno 
+  de la propia página web.
+- SEO Off-Page: La generación de autoridad externa mediante enlaces entrantes 
+  de calidad (backlinks) y menciones en otros sitios de confianza.
+================================================================================

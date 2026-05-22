@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <link rel="canonical" href="https://nrvertex.com/src/casos/florerializ" />
+
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO Local para Florería en Villa del Parque CABA — Caso Real | NRVERTEX</title>
+  <meta name="description" content="Estudio de caso de SEO local: cómo una florería en Villa del Parque, CABA, apareció primera en Google Maps en 60 días logrando +107 llamadas reales." />
+
+  <!-- Evitar FOUC en transición de página -->
+  <script>
+    if (sessionStorage.getItem('nrv-transition-incoming') === '1') {
+      document.documentElement.classList.add('nrv-transition-active');
+      const style = document.createElement('style');
+      style.id = 'nrv-fouc-temp-style';
+      style.innerHTML = '.nrv-transition-active, .nrv-transition-active body { background-color: #09090b !important; } .nrv-transition-active #app, .nrv-transition-active .contact-page { opacity: 0 !important; }';
+      document.head.appendChild(style);
+      // Fallback de seguridad
+      setTimeout(function() {
+        document.documentElement.classList.remove('nrv-transition-active');
+        const t = document.getElementById('nrv-fouc-temp-style');
+        if (t) t.remove();
+      }, 2500);
+    }
+  </script>
+
+  <!-- Preconnect to Google Fonts domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Combined and optimized Google Fonts preload (non-blocking) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  </noscript>
+
+  <!-- Material Symbols Outlined (Full set for reliability) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_forward,bolt,calendar_today,call,check,check_circle,close,directions,expand_more,image,info,keyboard_arrow_down,language,location_on,menu,photo_camera,query_stats,reviews,search,send,share,shield,star,verified,warning&display=swap">
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_forward,bolt,calendar_today,call,check,check_circle,close,directions,expand_more,image,info,keyboard_arrow_down,language,location_on,menu,photo_camera,query_stats,reviews,search,send,share,shield,star,verified,warning&display=swap">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_back,arrow_forward,bolt,calendar_today,call,check,check_circle,close,directions,expand_more,image,info,keyboard_arrow_down,language,location_on,menu,photo_camera,query_stats,reviews,search,send,share,shield,star,verified,warning&display=swap">
+  </noscript>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/casos/caso.css">
+
+  <!-- Critical LCP CSS to make Hero text visible before JS hydration -->
+  <style>
+    .breadcrumb, .badge-wrap, .hero-title, .hero-desc, .hero-metrics-strip, .scroll-indicator {
+      opacity: 1 !important;
+      filter: none !important;
+      transform: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Progress Bar de Lectura -->
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <div id="app">
+    <!-- 1. TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar" data-scarcity data-cupos="2">
+      <p style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; margin: 0; padding: 0 4px;">
+        <span><span class="nrv-desktop-only">Solo tomamos 3 clientes nuevos por mes.</span> Quedan <strong data-cupos-text style="color: #FFFFFF !important; font-weight: 800; background: rgba(255,255,255,0.15); padding: 2px 6px; border-radius: 4px;">2</strong> lugares para <strong data-mes style="color: #FFFFFF !important;">este mes</strong>.</span>
+        <span data-dots class="nrv-dots-container"></span>
+        <span data-timer style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color: #FFFFFF !important; background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 4px; letter-spacing:0.05em; margin-left: 8px; margin-right: 16px; font-weight: 500;"></span>
+        <a href="/contacto" class="nrv-topbar-link top-bar-btn">Reservar mi lugar →</a>
+      </p>
+    </div>
+
+    <!-- 2. NAVBAR (Copia exacta de index.html pero con enlaces corregidos) -->
+    <div class="navbar-wrapper">
+      <nav class="navbar">
+        <a href="/" class="nav-brand" style="text-decoration: none; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+          <span>NRVERTEX</span>
+          <span style="font-family:'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent-primary); border: 1px solid var(--accent-primary); padding: 2px 5px; border-radius: 4px; letter-spacing: 0.05em; font-weight: bold;">← INICIO</span>
+        </a>
+        <div class="nav-links">
+          <a href="/#servicios">Servicios</a>
+          <a href="/#proceso">Proceso</a>
+          <a href="/#preguntas">Preguntas</a>
+          <a href="/blog">Blog</a>
+        </div>
+        <a href="/contacto" class="cta-trigger nav-cta desktop-only">Agendá por WhatsApp</a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- MOBILE ALADDIN MENU -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+      <div class="mobile-menu-content">
+        <a href="/#servicios" class="mobile-link">Servicios</a>
+        <a href="/#proceso" class="mobile-link">Proceso</a>
+        <a href="/#preguntas" class="mobile-link">Preguntas</a>
+        <a href="/blog" class="mobile-link">Blog</a>
+        <a href="/contacto" class="cta-trigger btn-primary" style="margin-top: 24px;">Agendá por WhatsApp</a>
+      </div>
+    </div>
+
+    <main id="main-content">
+      <!-- SECCIÓN 1 — HERO DEL CASO (100vh) -->
+      <section class="caso-hero">
+      <div class="hero-glow"></div>
+      <div class="container text-center">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb reveal-blur" aria-label="Breadcrumb">
+          <a href="/">NRVERTEX</a> / <a href="/#resultados">Casos de Éxito</a> / <span>FloreríaLiz</span>
+        </nav>
+
+        <!-- Badge -->
+        <div class="badge-wrap reveal-up">
+          <span class="badge-pill">CASO DE ESTUDIO</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-title reveal-scale">
+          Cómo Una Florería De<br>
+          <span class="italic-accent">Villa del Parque CABA</span><br>
+          <span class="light-text">Apareció Primera En Google Maps En 60 Días</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="hero-desc reveal-up">
+          Florería local en Villa del Parque, CABA. Aumento de visibilidad orgánica local y ventas.
+        </p>
+
+        <!-- Hero Metrics Strip -->
+        <div class="hero-metrics-strip reveal-up">
+          <div class="hero-metric-item">
+            <span class="hero-metric-val">+107</span>
+            <span class="hero-metric-lbl">Llamadas / mes</span>
+          </div>
+          <div class="hero-metric-divider"></div>
+          <div class="hero-metric-item">
+            <span class="hero-metric-val">+457</span>
+            <span class="hero-metric-lbl">Cómo llegar / mes</span>
+          </div>
+          <div class="hero-metric-divider"></div>
+          <div class="hero-metric-item">
+            <span class="hero-metric-val">Top 1</span>
+            <span class="hero-metric-lbl">en Villa del Parque</span>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator reveal-up">
+          <span class="material-symbols-outlined bounce-animation">keyboard_arrow_down</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2 — EL PROBLEMA -->
+    <section class="section caso-problema">
+      <div class="container grid-2-asym">
+        <div class="problema-texto reveal-left">
+          <span class="label-caps label-accent">El Problema</span>
+          <h2 class="section-title">SEO Local Para Florerías En Buenos Aires — <span class="italic-accent">La Estrategia Que Funcionó</span></h2>
+          <div class="narrative-content">
+            <p>
+              Teníamos un local hermoso en Villa del Parque, con arreglos florales únicos y una atención súper dedicada, pero la gente del barrio pasaba de largo y terminaba comprando online en cadenas más grandes.
+            </p>
+            <p class="quote-narrative">
+              "Antes nadie nos encontraba en Google. Sentíamos que no podíamos competir contra los grandes presupuestos de publicidad en internet."
+              <span class="quote-author">— Liz, dueña del local.</span>
+            </p>
+            <p>
+              El negocio tenía un perfil de Google Business Profile creado hace años, pero estaba completamente inactivo: sin optimización de palabras clave locales, sin fotos de calidad que reflejaran sus arreglos y sin un sistema para recolectar reseñas. Para Google, la florería simplemente no existía.
+            </p>
+          </div>
+        </div>
+
+        <div class="problema-visual reveal-right">
+          <!-- Glassmorphism Card (Estado 0) -->
+          <div class="glass-card state-zero-card">
+            <div class="card-status-label red">ESTADO INICIAL (DÍA 0)</div>
+            <div class="search-mockup-mini">
+              <div class="search-bar-mini">
+                <span class="material-symbols-outlined">search</span>
+                <span>floreria cerca de mi villa del parque</span>
+              </div>
+              <div class="search-result-items">
+                <div class="mock-result competitor">Competidor Grande A <span>★ 4.8 (120+)</span></div>
+                <div class="mock-result competitor">Competidor Grande B <span>★ 4.6 (95+)</span></div>
+                <div class="mock-result competitor">Competidor C <span>★ 4.5 (80+)</span></div>
+                <div class="mock-result no-found-item">
+                  <span class="material-symbols-outlined">close</span> FloreríaLiz no figura en el Top 10
+                </div>
+              </div>
+            </div>
+            <div class="metrics-grid-mini">
+              <div class="metric-mini">
+                <span class="num">0</span>
+                <span class="lbl">Llamadas desde Google</span>
+              </div>
+              <div class="metric-mini">
+                <span class="num">0</span>
+                <span class="lbl">Rutas trazadas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3 — PROCESO (Timeline inmersivo) -->
+    <section class="section caso-proceso">
+      <div class="container">
+        <div class="text-center mb-8">
+          <span class="label-caps label-accent">Lo que hicimos</span>
+          <h2 class="section-title">Un sistema, <span class="italic-accent">no una táctica</span> suelta</h2>
+          <p class="section-desc">Diseñamos una estrategia integrada de optimización local en 4 etapas ejecutadas a la perfección.</p>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-line"></div>
+          
+          <!-- Item 1 -->
+          <div class="timeline-item left reveal-left">
+            <div class="timeline-badge">
+              <span class="material-symbols-outlined">search</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-step-num">ETAPA 01</div>
+              <h3>Auditoría de presencia digital</h3>
+              <p>Analizamos el volumen de búsqueda mensual de términos clave de florería en CABA y desglosamos las fortalezas de los perfiles competidores en Villa del Parque.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item right reveal-right">
+            <div class="timeline-badge">
+              <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-step-num">ETAPA 02</div>
+              <h3>Optimización completa del perfil Google Maps</h3>
+              <p>Reescribimos la información comercial utilizando palabras clave geo-localizadas avanzadas, cargamos fotografías en alta definición de arreglos reales y corregimos inconsistencias de datos (NAP).</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item left reveal-left">
+            <div class="timeline-badge">
+              <span class="material-symbols-outlined">calendar_today</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-step-num">ETAPA 03</div>
+              <h3>Publicación de contenido geolocalizado 2x/semana</h3>
+              <p>Diseñamos un calendario de publicaciones semanales directamente en Google Business Profile para comunicar ofertas, arreglos de temporada y generar relevancia de marca en el vecindario.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item right reveal-right">
+            <div class="timeline-badge">
+              <span class="material-symbols-outlined">reviews</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-step-num">ETAPA 04</div>
+              <h3>Gestión de reseñas y reputación online</h3>
+              <p>Implementamos un sistema de folletería interactiva con códigos QR dinámicos en el local para incentivar a los compradores presenciales a dejar reseñas positivas de 5 estrellas al instante.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4 — EVIDENCIA -->
+    <section class="section caso-evidencia">
+      <div class="container">
+        <div class="text-center mb-8">
+          <span class="label-caps label-accent">La Evidencia</span>
+          <h2 class="section-title">Los números no mienten. <span class="italic-accent">Las capturas tampoco.</span></h2>
+          <p class="section-desc">Evidencia real del panel de administración del negocio. Sin alteraciones.</p>
+        </div>
+
+        <div class="grid-2 compare-grid">
+          <!-- Columna ANTES -->
+          <div class="compare-col before-col reveal-left">
+            <div class="compare-tag">ANTES DEL SERVICIO</div>
+            
+            <div class="image-placeholder-container">
+              <div class="placeholder-border" data-cursor-image="VER">
+                <span class="placeholder-label">MÉTRICAS INICIALES (OCT 2025)</span>
+                <img src="/src/assets/casos/floreria-antes-interacciones.webp" alt="Captura de pantalla de rendimiento inicial con 0 interacciones de Perfil de Negocio" class="placeholder-img" loading="lazy" width="1024" height="455" fetchpriority="high">
+                <div class="placeholder-overlay">
+                  <span>0 INTERACCIONES</span>
+                </div>
+              </div>
+              <p class="image-caption">Captura real del panel de Google Business Profile mostrando el estado inicial del perfil con cero interacciones registradas en Octubre 2025.</p>
+            </div>
+          </div>
+
+          <!-- Columna DESPUÉS -->
+          <div class="compare-col after-col reveal-right">
+            <div class="compare-tag accent">DESPUÉS DE NRVERTEX</div>
+            
+            <!-- Placeholder para captura real 1 -->
+            <div class="image-placeholder-container">
+              <div class="placeholder-border" data-cursor-image="VER">
+                <span class="placeholder-label">CAPTURA REAL — BÚSQUEDA GOOGLE MAPS</span>
+                <img src="/src/assets/casos/floreria-despues-search.webp" alt="Captura de pantalla de búsqueda en Google Maps posicionada en Top 1 para FloreríaLiz" class="placeholder-img" loading="lazy" width="1024" height="689" fetchpriority="high">
+                <div class="placeholder-overlay">
+                  <span>TOP 1 GOOGLE MAPS</span>
+                </div>
+              </div>
+              <p class="image-caption">Captura real del resultado de búsqueda principal "Florería en Villa del Parque" liderando el ranking.</p>
+            </div>
+
+            <!-- Capturas reales - Rotación de Métricas -->
+            <div class="image-placeholder-container mt-4">
+              <div class="placeholder-border" data-cursor-image="VER">
+                <span class="placeholder-label">MÉTRICAS DEL PERFIL DE NEGOCIO (GOOGLE)</span>
+                
+                <div class="nrv-slideshow-container" data-slideshow>
+                  <img src="/src/assets/casos/floreria-gbp-interacciones.webp" data-badge="565 INTERACCIONES" data-caption="Reporte oficial del panel de Google mostrando las 565 interacciones conseguidas en el período." alt="Panel de control que muestra 565 interacciones de Perfil de Negocio para FloreríaLiz" class="placeholder-img nrv-slide active" loading="lazy" width="1024" height="536" fetchpriority="high">
+                  <img src="/src/assets/casos/floreria-gbp-direcciones.webp" data-badge="457 CÓMO LLEGAR" data-caption="Reporte oficial mostrando 457 personas que solicitaron indicaciones GPS para ir al local físico." alt="Panel de control que muestra 457 solicitudes de instrucciones de cómo llegar para FloreríaLiz" class="placeholder-img nrv-slide" loading="lazy" width="1024" height="535" fetchpriority="high">
+                  <img src="/src/assets/casos/floreria-gbp-llamadas.webp" data-badge="107 LLAMADAS DIRECTAS" data-caption="Reporte oficial mostrando las 107 llamadas de clientes realizadas desde el Perfil de Negocio." alt="Panel de control que muestra 107 llamadas telefónicas directas generadas desde el Perfil de Negocio para FloreríaLiz" class="placeholder-img nrv-slide" loading="lazy" width="1024" height="554" fetchpriority="high">
+                  
+                  <div class="nrv-slideshow-dots" data-dots>
+                    <span class="nrv-dot active" data-index="0"></span>
+                    <span class="nrv-dot" data-index="1"></span>
+                    <span class="nrv-dot" data-index="2"></span>
+                  </div>
+                </div>
+
+                <div class="placeholder-overlay">
+                  <span id="nrv-slideshow-badge">565 INTERACCIONES (CLIC PARA CAMBIAR)</span>
+                </div>
+              </div>
+              <p class="image-caption" id="nrv-slideshow-caption">Reporte oficial del panel de Google mostrando las 565 interacciones conseguidas en el período.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nota de autenticidad -->
+        <div class="authenticity-note text-center mt-8 reveal-up">
+          <span class="material-symbols-outlined">shield</span>
+          <span>Capturas extraídas directamente del panel de Google Business Profile.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5 — MÉTRICAS GRANDES (Clímax) -->
+    <section class="section caso-metricas">
+      <div class="metrics-radial-bg"></div>
+      <div class="container">
+        <div class="text-center mb-8 reveal-blur">
+          <span class="label-caps label-accent">Resultados</span>
+          <h2 class="section-title">Crecimiento en <span class="italic-accent">tiempo récord</span></h2>
+        </div>
+
+        <div class="large-metrics-grid">
+          <!-- Métrica 1 -->
+          <div class="large-metric-card reveal-scale">
+            <div class="metric-number-wrapper">
+              <span class="metric-prefix">+</span>
+              <span class="metric-num" data-split="chars" data-target="107">0</span>
+            </div>
+            <span class="metric-label">Llamadas directas</span>
+            <span class="metric-sublabel">vs. 0 llamadas en el mes inicial</span>
+          </div>
+
+          <!-- Métrica 2 -->
+          <div class="large-metric-card reveal-scale">
+            <div class="metric-number-wrapper">
+              <span class="metric-prefix">+</span>
+              <span class="metric-num" data-split="chars" data-target="457">0</span>
+            </div>
+            <span class="metric-label">Clics en Cómo Llegar</span>
+            <span class="metric-sublabel">Nuevos clientes visitando el local</span>
+          </div>
+
+          <!-- Métrica 3 -->
+          <div class="large-metric-card reveal-scale">
+            <div class="metric-number-wrapper">
+              <span class="metric-text-val">Top</span>
+              <span class="metric-num" data-split="chars" data-target="1">0</span>
+            </div>
+            <span class="metric-label">Posición Google Maps</span>
+            <span class="metric-sublabel">Para búsquedas en Villa del Parque</span>
+          </div>
+
+          <!-- Métrica 4 -->
+          <div class="large-metric-card reveal-scale">
+            <div class="metric-number-wrapper">
+              <span class="metric-num" data-split="chars" data-target="565">0</span>
+            </div>
+            <span class="metric-label">Interacciones de Perfil</span>
+            <span class="metric-sublabel">En el Perfil de Negocio de Google</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6 — TESTIMONIO -->
+    <section class="section caso-testimonio">
+      <div class="container text-center">
+        <div class="testimonial-content reveal-blur">
+          <!-- Comilla Gigante -->
+          <div class="quote-icon">“</div>
+          
+          <blockquote class="testimonial-quote">
+            Sinceramente no esperaba ver resultados tan rápido. Antes ni siquiera aparecíamos en Google, pero armaron nuestro perfil desde cero y hoy somos la opción número uno en Villa del Parque. En menos de 90 días empezamos a recibir llamadas constantes y clientes nuevos que llegan solos al local. Fue un antes y un después absoluto para las ventas de la florería.
+          </blockquote>
+
+          <div class="testimonial-attribution">
+            <span class="author-name">Liz</span>
+            <span class="author-details">Dueña · FloreríaLiz · Villa del Parque, CABA</span>
+          </div>
+
+          <!-- Estrellas -->
+          <div class="stars-rating">
+            <span class="material-symbols-outlined filled-star">star</span>
+            <span class="material-symbols-outlined filled-star">star</span>
+            <span class="material-symbols-outlined filled-star">star</span>
+            <span class="material-symbols-outlined filled-star">star</span>
+            <span class="material-symbols-outlined filled-star">star</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7 — CTA FINAL -->
+    <section class="section caso-cta">
+      <div class="cta-radial-bg"></div>
+      <div class="container container-sm text-center reveal-up">
+        <h2 class="section-title">¿Tu negocio necesita <span class="italic-accent">los mismos</span> resultados?</h2>
+        <p class="section-desc mb-4">
+          Trabajamos con negocios de Buenos Aires que quieren aparecer primero en Google Maps sin pagar anuncios.
+        </p>
+        <a data-magnetic data-magnetic-strength="0.35" href="/contacto" class="cta-trigger btn-primary">
+          Quiero resultados como Liz →
+        </a>
+        <div class="back-link-wrapper">
+          <a href="/#resultados" class="back-link">
+            ← Ver todos los casos
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 13. FOOTER (Copia exacta de index.html) -->
+  <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand-col">
+          <a href="/" class="footer-brand">NRVERTEX</a>
+          <p class="footer-desc">Vamos a conseguirte más clientes a los que darles un servicio excepcional.</p>
+          <p class="footer-desc" style="font-size:12px;">Soluciones a medida para negocios Argentinos que buscan crecer.
+          </p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Página</h4>
+          <ul>
+            <li><a href="/#proceso">Proceso</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li><a href="/#testimonios">Testimonios</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="/#preguntas">Preguntas</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Conectá</h4>
+          <ul>
+            <li><a href="/contacto" class="cta-trigger">Agendá por WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING CTA -->
+    <a href="/contacto" class="floating-cta cta-trigger" id="floating-cta">
+      <span class="material-symbols-outlined" style="font-size: 20px;">call</span> Agendá por WhatsApp
+    </a>
+  </div>
+
+  <!-- Schema Markup para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "NRVERTEX",
+        "item": "https://nrvertex.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Casos de Éxito",
+        "item": "https://nrvertex.com/#resultados"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "FloreríaLiz",
+        "item": "https://nrvertex.com/src/casos/florerializ"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cómo FloreríaLiz conquistó Google Maps en solo 60 días",
+    "description": "Estudio de caso sobre la estrategia de SEO local implementada para FloreríaLiz en Villa del Parque, Buenos Aires, que generó +107 llamadas y +457 clics mensuales.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "NRVERTEX",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nrvertex.com/screen.webp"
+      }
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "NRVERTEX"
+    },
+    "mainEntityOfPage": "https://nrvertex.com/src/casos/florerializ"
+  }
+  </script>
+
+  <!-- Módulos de Javascript -->
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/casos/caso.js"></script>
+</body>
+
+</html>

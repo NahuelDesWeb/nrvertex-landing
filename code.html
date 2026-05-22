@@ -1,0 +1,596 @@
+<!DOCTYPE html><html class="dark" lang="es" style=""><head></head><body class="bg-[#09090b] text-gray-300 font-body-md text-body-md antialiased relative overflow-x-hidden selection:bg-primary/30 selection:text-primary">```html
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NRVERTEX — Diseño y Publicidad</title>
+<!-- Google Fonts: Poppins -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from Style Guidance -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#d2bbff",
+                        "on-primary": "#3f008e",
+                        "primary-container": "#7c3aed",
+                        "on-primary-container": "#ede0ff",
+                        "secondary": "#ddb7ff",
+                        "on-secondary": "#490080",
+                        "secondary-container": "#6f00be",
+                        "on-secondary-container": "#d6a9ff",
+                        "tertiary": "#ddb8ff",
+                        "on-tertiary": "#490081",
+                        "tertiary-container": "#844abe",
+                        "on-tertiary-container": "#f2e0ff",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "background": "#09090b",
+                        "on-background": "#e5e1e4",
+                        "surface": "#131315",
+                        "on-surface": "#e5e1e4",
+                        "surface-variant": "#353437",
+                        "on-surface-variant": "#ccc3d8",
+                        "outline": "#958da1",
+                        "outline-variant": "#4a4455",
+                        "inverse-surface": "#e5e1e4",
+                        "inverse-on-surface": "#313032",
+                        "inverse-primary": "#732ee4",
+                        "surface-dim": "#131315",
+                        "surface-bright": "#39393b",
+                        "surface-container-lowest": "#0e0e10",
+                        "surface-container-low": "#1c1b1d",
+                        "surface-container": "#201f22",
+                        "surface-container-high": "#2a2a2c",
+                        "surface-container-highest": "#353437"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "container-max": "1280px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Poppins", "sans-serif"],
+                        "label-caps": ["JetBrains Mono", "monospace"],
+                        "display-lg": ["Poppins", "sans-serif"],
+                        "body-lg": ["Poppins", "sans-serif"],
+                        "display-lg-mobile": ["Poppins", "sans-serif"],
+                        "headline-md": ["Poppins", "sans-serif"],
+                        "headline-xl-mobile": ["Poppins", "sans-serif"],
+                        "headline-xl": ["Poppins", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Global Font Override to Poppins */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #09090b;
+        }
+        /* Custom Primary Button Gradient from Style Guidance */
+        .btn-primary {
+            background: linear-gradient(90deg, #7c3aed 0%, #a855f7 100%);
+            box-shadow: 0 0 0 rgba(168, 85, 247, 0);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+            transform: translateY(-2px);
+        }
+        /* Updated CTA to use purple gradient instead of orange/red */
+        .btn-cta {
+            background: linear-gradient(90deg, #7c3aed 0%, #a855f7 100%);
+            box-shadow: 0 0 0 rgba(168, 85, 247, 0);
+            transition: all 0.3s ease;
+        }
+        .btn-cta:hover {
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+            transform: translateY(-2px);
+        }
+        /* Red gradient for new floating nav CTA */
+        .btn-nav-red {
+            background: linear-gradient(90deg, #e11d48 0%, #f97316 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-nav-red:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+        /* Divider Gradient */
+        .divider-glow {
+            background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.3), transparent);
+        }
+    </style>
+<!-- 1. TOP ANNOUNCEMENT BAR -->
+<div class="w-full bg-[#09090b] border-b border-[#a855f7]/20 py-2 text-center relative z-[60]">
+<p class="font-label-caps text-label-caps text-[#a855f7]">Cupos limitados para nuevos clientes este mes. <span class="text-white ml-2 cursor-pointer hover:underline">Agendá tu llamado gratis →</span></p>
+</div>
+<!-- 2. REDESIGNED NAVBAR (Floating centered pill) -->
+<nav class="fixed left-1/2 -translate-x-1/2 w-fit max-w-[680px] z-[100] top-[45px]">
+<div class="backdrop-blur-xl border border-[#a855f7]/20 rounded-full px-6 py-2 flex items-center gap-8 shadow-2xl bg-[#131315]/70" style="background: rgba(19, 19, 21, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(168, 85, 247, 0.2);">
+<!-- Brand (Left) -->
+<a class="font-bold text-lg md:text-xl tracking-tight text-white" href="#">
+                NRVERTEX
+            </a>
+<!-- Links (Center) -->
+<div class="hidden md:flex gap-6 items-center gap-8">
+<a class="text-[14px] font-medium text-gray-300 hover:text-white transition-colors" href="#servicios">Servicios</a>
+<a class="text-[14px] font-medium text-gray-300 hover:text-white transition-colors" href="#proceso">Proceso</a>
+<a class="text-[14px] font-medium text-gray-300 hover:text-white transition-colors" href="#preguntas">Preguntas</a>
+<a class="text-[14px] font-medium text-gray-300 hover:text-white transition-colors" href="#blog">Blog</a>
+</div>
+<!-- Trailing Action (Right) -->
+<a class="text-white text-[14px] font-semibold px-[18px] py-[8px] rounded-full btn-cta whitespace-nowrap inline-flex items-center" href="#agenda">Agenda un llamado</a>
+</div>
+</nav>
+<!-- 3. HERO -->
+<section class="pt-56 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative flex flex-col items-center text-center">
+<!-- Radial Glow (Purple) -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] z-[-1] pointer-events-none"></div>
+<div class="border border-white/10 rounded-full px-4 py-1.5 mb-8 bg-[#131315]">
+<span class="font-label-caps text-label-caps text-gray-300">¿Tenés un negocio o empresa en Argentina?</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-white max-w-5xl mx-auto mb-6 leading-tight font-extrabold">
+            Tu Empresa En <span class="italic font-light text-[#a855f7]">Los Primeros 3</span> Resultados De Google En 90 Días - <span class="italic font-light text-[#a855f7]">Garantizado</span>
+</h1>
+<p class="font-body-lg text-body-lg text-gray-300 max-w-3xl mx-auto mb-10 font-normal">
+            Vamos a posicionar y mantener a tu negocio en los primeros tres resultados de Google para tu área de servicio en menos de 90 días. Sin pagar anuncios, sin trucos y sin que muevas un dedo.
+        </p>
+<div class="flex flex-col sm:flex-row gap-6 mb-20">
+<a class="btn-cta text-white font-semibold text-[18px] px-8 py-4 rounded-lg flex items-center justify-center gap-2" href="#agenda">
+                Agendá un llamado
+            </a>
+<a class="border border-[#7c3aed] text-white hover:bg-[#7c3aed]/10 font-medium text-body-md px-8 py-4 rounded-lg flex items-center justify-center gap-2 transition-all" href="#info">
+                Más info
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400;">arrow_downward</span>
+</a>
+</div>
+<!-- Video Placeholder -->
+<div class="w-full max-w-4xl mx-auto aspect-video rounded-xl border border-white/10 bg-[#131315] overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-t from-[#09090b] to-transparent z-10 opacity-80"></div>
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-7xl text-primary drop-shadow-[0_0_20px_rgba(214,188,244,0.8)] z-20 cursor-pointer hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<img alt="Video Placeholder Background" class="w-full h-full object-cover opacity-30 grayscale mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKaj-0Sxx-Ftg0GA31kD5t32FMA69F66OwiLnyV901P6SpK5cquotHbsBX_Lqwfv9eQOJ3_VKdKjbr5TWX7ku5Pixm6ZiiaK3XzKFPdyHN8baLoORzElNJKIJTNpDsbWtSn07dzAAr_JhEEVBx8BfT4h0d-m4gTti9q5FGrD3mI7pihCW0t0uF6j8mRiyBt4404aYrLK18v5S0JzWtkKEmjjudl2xz0sxBgU-lx2e4YTIQAhIpa9uta9NNYMoP_lWOkCNFIFINsYA">
+</div>
+</section>
+<!-- 5. RESULTS -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-[#09090b] relative overflow-hidden" id="resultados">
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-20">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase mb-4 block">Casos de Éxito</span>
+<h2 class="font-headline-xl text-headline-xl text-white mb-6 font-bold">
+<span class="italic font-light text-primary">Resultados</span> Reales, Impacto Tangible
+            </h2>
+<p class="font-body-lg text-gray-300 max-w-xl mx-auto">
+                Garantizamos el crecimiento de tu negocio a través de estrategias basadas en datos.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+<!-- Case Card 1 -->
+<div class="bg-[#131315] border border-white/5 rounded-xl p-10 flex flex-col transition-all duration-500 hover:border-white/10">
+<div class="mb-8 flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-xl">local_florist</span>
+</div>
+</div>
+<div class="space-y-1 mb-10">
+<h3 class="font-['Sora'] font-bold text-headline-md text-white">FloreríaLiz</h3>
+<p class="font-['Sora'] text-sm text-gray-400">Floristería · Villa del Parque, CABA</p>
+</div>
+<div class="mb-10">
+<div class="text-primary font-['Sora'] font-extrabold text-[44px] leading-tight">TOP 1</div>
+<div class="font-['Sora'] text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">EN EL BUSCADOR DE GOOGLE · 90 DÍAS</div>
+</div>
+<div class="grid grid-cols-2 gap-4 pb-8 mb-8 border-b border-white/5">
+<div class="space-y-1">
+<div class="text-white font-['Sora'] font-semibold text-lg">114</div>
+<div class="text-[10px] text-gray-400 uppercase font-bold tracking-tighter">LLAMADAS</div>
+</div>
+<div class="space-y-1">
+<div class="text-white font-['Sora'] font-semibold text-lg">487</div>
+<div class="text-[10px] text-gray-400 uppercase font-bold tracking-tighter">+$8.3M ARS en tratos cerrados · $0 en publicidad</div>
+</div>
+</div>
+<div class="text-xs text-gray-400 font-['Sora']">
+    ⭐ 5.0 · 602 interacciones
+</div>
+</div>
+<!-- Case Card 2 -->
+<div class="bg-[#131315] border border-white/5 rounded-xl p-10 flex flex-col transition-all duration-500 hover:border-white/10">
+<div class="mb-8 flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-xl">construction</span>
+</div>
+</div>
+<div class="space-y-1 mb-10">
+<h3 class="font-['Sora'] font-bold text-headline-md text-white">AlbornozObras</h3>
+<p class="font-['Sora'] text-sm text-gray-400">Construcción · CABA</p>
+</div>
+<div class="mb-10">
+<div class="text-primary font-['Sora'] font-extrabold text-[44px] leading-tight">+1.171%</div>
+<div class="font-['Sora'] text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">CRECIMIENTO EN INTERACCIONES · 90 DÍAS</div>
+</div>
+<div class="grid grid-cols-2 gap-4 pb-8 mb-8 border-b border-white/5">
+<div class="space-y-1">
+<div class="text-white font-['Sora'] font-semibold text-lg">19</div>
+<div class="text-[10px] text-gray-400 uppercase font-bold tracking-tighter">LLAMADAS</div>
+</div>
+<div class="space-y-1">
+<div class="text-white font-['Sora'] font-semibold text-lg">70</div>
+<div class="text-[10px] text-gray-400 uppercase font-bold tracking-tighter">+$8.3M ARS en tratos cerrados · $0 en publicidad</div>
+</div>
+</div>
+<div class="text-xs text-gray-400 font-['Sora']">+$8.3M ARS en tratos cerrados · $0 en publicidad</div>
+</div>
+</div>
+</div>
+</section>
+<div class="h-[1px] w-full max-w-4xl mx-auto divider-glow opacity-30"></div>
+<!-- 6. SERVICES -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-[#09090b]" id="servicios">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="border border-white/10 rounded-full px-4 py-1 inline-block mb-6 font-label-caps text-label-caps text-primary">Servicios</span>
+<h2 class="font-headline-xl text-headline-xl text-white mb-4 font-bold">
+                Cómo Vamos A <span class="italic font-light text-primary">Hacer Crecer</span> Tu Negocio
+            </h2>
+<p class="font-body-md text-body-md text-gray-300 max-w-2xl mx-auto">
+                Te conseguimos más clientes y hacemos que tu negocio llegue a más personas de manera fácil.
+            </p>
+</div>
+<div class="flex flex-col gap-8 max-w-4xl mx-auto w-full">
+<!-- Service Card 1 -->
+<div class="bg-[#131315] border border-white/5 rounded-xl p-8 md:p-10 transition-all duration-300 relative overflow-hidden hover:border-white/10" style="position: relative; overflow: hidden; border: 1px solid rgba(168, 85, 247, 0.25); box-shadow: rgba(124, 58, 237, 0.2) 0px 0px 24px, rgba(168, 85, 247, 0.1) 0px 0px 8px;"><div class="" style="position: absolute; top: 0px; left: 0px; width: 280px; height: 280px; background: radial-gradient(circle at 0% 0%, rgba(124, 58, 237, 0.35) 0%, transparent 65%); pointer-events: none;"></div>
+<div class="relative z-10">
+<h3 class="text-headline-md text-white mb-4 font-semibold tracking-tight">Tu Empresa En Los Primeros 3 Resultados De Google</h3>
+<p class="text-gray-300 leading-relaxed font-body-md tracking-wide opacity-90 font-normal">Llevamos a tu negocio a las primeras tres posiciones en Google Maps en menos de 90 días, alcanzando al 70% de todos los clientes potenciales, desplazando a tu competencia y haciendo a tu negocio más confiable, sin pagar anuncios.</p>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-[#131315] border border-white/5 rounded-xl p-8 md:p-10 transition-all duration-300 relative overflow-hidden hover:border-white/10" style="position: relative; overflow: hidden; border: 1px solid rgba(168, 85, 247, 0.25); box-shadow: rgba(124, 58, 237, 0.2) 0px 0px 24px, rgba(168, 85, 247, 0.1) 0px 0px 8px;"><div class="" style="position: absolute; top: 0px; right: 0px; width: 280px; height: 280px; background: radial-gradient(circle at 100% 0%, rgba(168, 85, 247, 0.3) 0%, transparent 65%); pointer-events: none;"></div><div style="position: absolute; bottom: 0; left: 0; width: 200px; height: 200px; background: radial-gradient(circle at 0% 100%, rgba(124,58,237,0.20) 0%, transparent 60%); pointer-events: none;"></div>
+<div class="relative z-10">
+<h3 class="text-headline-md text-white mb-4 font-semibold tracking-tight">Llegá A Todos Tus Clientes Potenciales En Las Redes</h3>
+<p class="text-gray-300 leading-relaxed font-body-md tracking-wide opacity-90 font-normal">Ponemos a tu empresa y marca enfrente de miles de clientes potenciales en todos los medios, 24/7 - creando oportunidades de venta, haciendo crecer tus redes sociales y convirtiéndote en EL negocio para lo que ofreces.</p>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-[#131315] border border-white/5 rounded-xl p-8 md:p-10 transition-all duration-300 relative overflow-hidden hover:border-white/10" style="position: relative; overflow: hidden; border: 1px solid rgba(168, 85, 247, 0.25); box-shadow: rgba(124, 58, 237, 0.2) 0px 0px 24px, rgba(168, 85, 247, 0.1) 0px 0px 8px;"><div class="" style="position: absolute; bottom: 0px; right: 0px; width: 280px; height: 280px; background: radial-gradient(circle at 100% 100%, rgba(124, 58, 237, 0.35) 0%, transparent 65%); pointer-events: none;"></div>
+<div class="relative z-10">
+<h3 class="text-headline-md text-white mb-4 font-semibold tracking-tight">Tu Negocio Activo y Primero en tu Zona</h3>
+<p class="text-gray-300 leading-relaxed font-body-md tracking-wide opacity-90 font-normal">Google premia a los negocios que muestran movimiento. Por eso, todos los meses nos encargamos de subir tus nuevos trabajos, actualizar tus fotos y mejorar tu web para que la competencia nunca te pase y los mensajes sigan llegando todas las semanas.</p>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<p class="font-body-md text-gray-300 mb-6 font-medium">¿Buscás un servicio que no encontrás?</p>
+<a class="btn-primary text-white font-medium px-8 py-3 rounded-lg inline-flex items-center gap-2" href="#agenda">
+                Agendá un llamado <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 8. PROCESS -->
+<section class="bg-[#09090b] py-[120px] text-center font-['Sora']" id="proceso">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="inline-block border border-white/10 rounded-full px-4 py-1.5 mb-8">
+<span class="text-primary text-[12px] font-normal uppercase tracking-[0.1em]">PROCESO</span>
+</div>
+<h2 class="m-0 text-white font-bold text-[64px] leading-[1.1]">
+    El Proceso Simple Que<br>
+<span class="font-['Playfair_Display'] italic font-normal">Garantiza</span> Tu Éxito
+  </h2>
+<p class="text-gray-300 text-[17px] font-normal max-w-[560px] mx-auto mt-6 mb-20 leading-[1.6]">
+    Vamos a hacer una evaluación completa de tu negocio para saber cuál de nuestros servicios es el ideal, y después aplicamos nuestro sistema de tres pasos:
+  </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-20 max-w-[1200px] mx-auto">
+<div class="flex flex-col items-center">
+<div class="mb-6 relative flex justify-center"><svg fill="none" height="64" stroke="white" stroke-width="1.5" viewBox="0 0 64 64" width="64">
+<circle cx="26" cy="26" r="16"></circle>
+<line x1="37" x2="52" y1="37" y2="52"></line>
+<circle cx="26" cy="26" fill="#7c3aed" r="4" stroke="#7c3aed"></circle>
+</svg></div>
+<h3 class="text-white font-bold text-[28px] mb-4">Investigación</h3>
+<p class="text-gray-300 text-[15px] max-w-[200px] mx-auto">Entendemos tu propuesta de valor y quiénes son tus clientes ideales</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="mb-6 relative flex justify-center"><svg fill="none" height="64" stroke="white" stroke-width="1.5" viewBox="0 0 64 64" width="64">
+<circle cx="22" cy="12" r="5"></circle>
+<circle cx="42" cy="12" r="5"></circle>
+<path d="M14 24 Q14 44 32 44 Q50 44 50 24"></path>
+<line x1="14" x2="14" y1="24" y2="32"></line>
+<line x1="50" x2="50" y1="24" y2="32"></line>
+<line stroke="#7c3aed" x1="10" x2="18" y1="32" y2="32"></line>
+<line stroke="#7c3aed" x1="46" x2="54" y1="32" y2="32"></line>
+</svg></div>
+<h3 class="text-white font-bold text-[28px] mb-4">Atracción</h3>
+<p class="text-gray-300 text-[15px]">Creamos, probamos y administramos el 100% de las estrategias que mejor resultado le consiga a tu negocio</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="mb-6 relative flex justify-center"><svg fill="none" height="64" stroke="white" stroke-width="1.5" viewBox="0 0 64 64" width="64">
+<ellipse cx="30" cy="38" rx="18" ry="14"></ellipse>
+<circle cx="30" cy="22" r="8"></circle>
+<circle cx="30" cy="22" fill="none" r="3" stroke="#7c3aed"></circle>
+<line x1="22" x2="20" y1="50" y2="58"></line>
+<line x1="38" x2="40" y1="50" y2="58"></line>
+<path d="M48 36 Q54 38 52 44"></path>
+<line x1="26" x2="34" y1="36" y2="36"></line>
+</svg></div>
+<h3 class="text-white font-bold text-[28px] mb-4">Resultados</h3>
+<p class="text-gray-300 text-[15px]">Expandimos lo que funciona y suprimimos lo que no, para conseguirte resultados exponenciales y seguir creciendo</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. COMPARISON -->
+<section class="py-section-gap w-full bg-[#09090b]">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="border border-white/10 rounded-full px-4 py-1 inline-block mb-6 font-label-caps text-label-caps text-primary">Comparación</span>
+<h2 class="font-headline-xl text-headline-xl text-white mb-4 font-bold">
+                Por qué elegirnos antes que a <span class="italic font-light text-primary">todos los demás</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+<div class="text-center">
+<h3 class="font-bold text-headline-md text-gray-500 tracking-tight uppercase">Otras Agencias</h3>
+</div>
+<div class="text-center">
+<h3 class="font-bold text-[32px] tracking-tighter text-primary font-display-lg-mobile">NRVERTEX</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-start">
+<!-- Otras Agencias -->
+<div class="border border-white/5 rounded-2xl p-8 bg-[#131315] relative z-10 h-fit">
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-gray-500 mt-1" style="font-variation-settings: 'wght' 300;">close</span>
+<span class="font-body-md text-gray-400">Comunicación lenta</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-gray-500 mt-1" style="font-variation-settings: 'wght' 300;">close</span>
+<span class="font-body-md text-gray-400">No entienden tu mercado</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-gray-500 mt-1" style="font-variation-settings: 'wght' 300;">close</span>
+<span class="font-body-md text-gray-400">Te suman más trabajo</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-gray-500 mt-1" style="font-variation-settings: 'wght' 300;">close</span>
+<span class="font-body-md text-gray-400">Sin un servicio a medida</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-gray-500 mt-1" style="font-variation-settings: 'wght' 300;">close</span>
+<span class="font-body-md text-gray-400">Requieren contratos de largo plazo</span>
+</li>
+</ul>
+</div>
+<!-- NRVERTEX -->
+<div class="border border-white/10 rounded-2xl p-8 bg-[#131315] relative z-10 h-fit">
+<ul class="space-y-6"><li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'wght' 600;">check</span>
+<span class="font-body-md text-white font-semibold">Investigación profunda de tu rubro y clientes ideales</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'wght' 600;">check</span>
+<span class="font-body-md text-white font-semibold">Nos ocupamos del 100% del trabajo digital</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'wght' 600;">check</span>
+<span class="font-body-md text-white font-semibold">Servicio a medida diseñado específicamente para tu negocio</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'wght' 600;">check</span>
+<span class="font-body-md text-white font-semibold">Seguimiento mensual con reportes de resultados reales</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'wght' 600;">check</span>
+<span class="font-body-md text-white font-semibold">Atención directa y personalizada.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'wght' 600;">check</span>
+<span class="font-body-md text-white font-semibold">Precios accesibles, sin contratos de largo plazo</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'wght' 600;">check</span>
+<span class="font-body-md text-white font-semibold">Resultados medibles en 90 días garantizados</span>
+</li></ul>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. TESTIMONIALS -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-[#09090b]">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<div class="inline-block border border-white/10 rounded-full px-4 py-1.5 mb-6">
+<span class="font-['Sora'] text-[12px] uppercase text-[#a855f7]">Testimonios</span>
+</div>
+<h2 class="font-['Sora'] font-bold text-[60px] text-white leading-tight">
+                Gente Increíble Que Ayudamos A <span class="font-['Playfair_Display'] italic font-normal text-white">Ganar</span>
+</h2>
+</div>
+<div class="gap-8 max-w-[1000px] mx-auto flex flex-col items-center">
+<!-- Testimonial 1 -->
+<div class="bg-[#131315] border border-white/5 rounded-2xl p-8 max-w-[700px] w-full">
+<p class="font-['Sora'] text-[16px] text-gray-300 leading-[1.6] mb-8 font-normal">
+                    "La verdad no esperaba estos resultados tan rápido. Mi negocio no aparecía en Google para nada, Nahuel creó el perfil desde cero y hoy somos el número 1 en Maps en Villa del Parque. Recibimos 114 llamadas y más de 480 personas pidieron cómo llegar al local — todo en menos de 90 días. Ahora hasta clientes de otros barrios nos encuentran solos. Estoy muy contenta con el servicio."
+                </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">L</div>
+<div>
+<p class="font-['Sora'] font-semibold text-[15px] text-white">Liz</p>
+<p class="font-['Sora'] text-[13px] text-gray-400 font-normal">Dueña · FloreríaLiz · Villa del Parque, CABA</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-[#131315] border border-white/5 rounded-2xl p-8 max-w-[700px] w-full">
+<p class="font-['Sora'] text-[16px] text-gray-300 leading-[1.6] mb-8 font-normal">"Antes nadie nos encontraba en Google. Desde que trabajo con Nahuel mes a mes empezamos a recibir llamadas y consultas de clientes nuevos. En 3 meses llegaron 25 personas pidiendo presupuesto para remodelaciones. Gracias a eso cerramos tratos importantes y recuperamos la inversión en nrvertex. Seguimos trabajando juntos."</p><div><br></div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">RA</div>
+<div>
+<p class="font-['Sora'] font-semibold text-[15px] text-white">Roberto A.</p>
+<p class="font-['Sora'] text-[13px] text-gray-400 font-normal">Dueño · AlbornozObras · CABA</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. MIDDLE CTA -->
+<section class="py-24 relative overflow-hidden bg-[#09090b]">
+<div class="absolute inset-0 bg-primary/5 blur-[100px] z-[-1] opacity-50"></div>
+<div class="max-w-4xl mx-auto text-center px-margin-mobile">
+<h2 class="text-[32px] md:text-[40px] text-white mb-8 leading-tight font-bold transition-all duration-700">
+                Más clientes, más conversiones y más crecimiento para tu negocio, garantizados. Agendá un llamado de estrategia gratis ahora para asesorarte.
+            </h2>
+<a class="btn-cta text-white font-semibold text-[16px] px-8 py-4 rounded-lg inline-flex items-center justify-center gap-2" href="#agenda">
+                Agendá un llamado rápido <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- 11. FAQ -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-[#09090b]" id="preguntas">
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-16">
+<span class="border border-white/10 rounded-full px-4 py-1 inline-block mb-6 font-label-caps text-label-caps text-primary">Preguntas</span>
+<h2 class="font-headline-xl text-headline-xl text-white font-bold">
+                Algunas <span class="italic font-light text-primary">Preguntas</span> Frecuentes
+            </h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-[#131315] border border-white/5 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between gap-3 p-6 cursor-pointer font-semibold text-[16px] text-white hover:text-primary transition-colors">
+                    ¿Qué van a hacer por mi empresa, exactamente?
+                    <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180 text-gray-400">add</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-gray-300 border-t border-white/5 mt-2 font-normal">
+                    Implementamos un sistema integral de posicionamiento y atracción de clientes adaptado a tu nicho específico.
+                </div>
+</details>
+<details class="group bg-[#131315] border border-white/5 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between gap-3 p-6 cursor-pointer font-semibold text-[16px] text-white hover:text-primary transition-colors">
+                    ¿Cuánto tarda en conseguir resultados?
+                    <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180 text-gray-400">add</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-gray-300 border-t border-white/5 mt-2 font-normal">
+                    Garantizamos resultados tangibles en los primeros 90 días, aunque muchos clientes ven mejoras en las primeras semanas.
+                </div>
+</details>
+<details class="group bg-[#131315] border border-white/5 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between gap-3 p-6 cursor-pointer font-semibold text-[16px] text-white hover:text-primary transition-colors">
+                    ¿Cuánto me va a costar empezar?
+                    <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180 text-gray-400">add</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-gray-300 border-t border-white/5 mt-2 font-normal">
+                    Los costos varían según el tamaño y las necesidades de tu empresa. Agendá un llamado para un presupuesto exacto.
+                </div>
+</details>
+<details class="group bg-[#131315] border border-white/5 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between gap-3 p-6 cursor-pointer font-semibold text-[16px] text-white hover:text-primary transition-colors">
+                    ¿Tengo que invertir tiempo o trabajo?
+                    <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180 text-gray-400">add</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-gray-300 border-t border-white/5 mt-2 font-normal">
+                    Nosotros nos ocupamos del 100% de la ejecución. Solo necesitamos tu feedback inicial y validación.
+                </div>
+</details>
+<details class="group bg-[#131315] border border-white/5 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between gap-3 p-6 cursor-pointer font-semibold text-[16px] text-white hover:text-primary transition-colors">
+                    ¿Necesito entender la parte técnica?
+                    <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180 text-gray-400">add</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-gray-300 border-t border-white/5 mt-2 font-normal">
+                    No, nosotros traducimos la jerga técnica en resultados de negocio claros en nuestros reportes semanales.
+                </div>
+</details>
+</div>
+</div>
+</section>
+<!-- 12. FINAL CTA -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-[#09090b] relative" id="agenda">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.05)_0%,transparent_70%)] z-[-1] pointer-events-none"></div>
+<div class="max-w-3xl mx-auto bg-[#131315] border border-white/10 rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#7c3aed] to-transparent opacity-50"></div>
+<span class="border border-white/10 rounded-full px-4 py-1 inline-block mb-8 font-label-caps text-label-caps text-gray-400">Empezá</span>
+<h2 class="text-[40px] md:text-[56px] text-white mb-6 leading-tight font-extrabold">
+                Conseguí Más <span class="italic font-light text-primary">Clientes Y Hacé Crecer</span> Tu Negocio
+            </h2>
+<p class="font-body-md text-body-md text-gray-300 mb-10 max-w-lg mx-auto font-normal">
+                Agendá un llamado gratis de 20 mins para asesorarte y que te mostremos exactly cómo vamos a ayudarte.
+            </p>
+<a class="btn-cta text-white font-bold text-[18px] px-10 py-5 rounded-lg inline-block transition-transform hover:scale-105" href="#">
+                Agendá un llamado
+            </a>
+</div>
+</section>
+<!-- 13. FOOTER -->
+<footer class="bg-[#09090b] text-primary font-body-md text-body-md w-full py-section-gap border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<a class="text-headline-md text-white block mb-6 font-bold" href="#">
+                    NRVERTEX
+                </a>
+<p class="text-gray-400 font-body-md text-[14px] mb-6 font-normal">
+                    Vamos a conseguirte más clientes a los que darles un servicio excepcional.
+                </p>
+<p class="text-gray-500 text-[12px] font-normal">
+                    Soluciones a medida para negocios Argentinos que buscan crecer.
+                </p>
+</div>
+<div>
+<h4 class="font-bold text-[16px] text-white mb-6">Página</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-gray-400 hover:text-white transition-colors font-normal" href="#blog">Blog</a></li>
+<li class=""><a class="text-gray-400 hover:text-white transition-colors font-normal" href="#proceso">Proceso</a></li>
+<li class=""><a class="text-gray-400 hover:text-white transition-colors font-normal" href="#servicios">Servicios</a></li>
+<li class=""><a class="text-gray-400 hover:text-white transition-colors font-normal" href="#testimonios">Testimonios</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[16px] text-white mb-6">Información</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-gray-400 hover:text-white transition-colors font-normal" href="#preguntas">Preguntas</a></li>
+<li class=""><a class="text-gray-400 hover:text-white transition-colors font-normal" href="#contacto">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[16px] text-white mb-6">Conectá</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-gray-400 hover:text-white transition-colors font-normal" href="#agenda">Agendá un llamado</a></li>
+<li class=""><a class="text-gray-400 hover:text-white transition-colors font-normal" href="#">Instagram</a></li>
+<li class=""><a class="text-gray-400 hover:text-white transition-colors font-normal" href="#">Facebook</a></li>
+<li class=""></li></ul></div></div></footer>
+
+</body></html>

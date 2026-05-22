@@ -1,0 +1,43 @@
+# NRVERTEX - Agencia de SEO Local en Buenos Aires
+
+[NRVERTEX](https://nrvertex.com) es una agencia de SEO local especializada en posicionar negocios y pymes en el Top 3 de Google Maps para Buenos Aires (CABA y GBA) en menos de 90 días, sin pagar anuncios y de forma 100% orgánica.
+
+## Información de la Empresa e Contacto
+
+- **Sitio Web Oficial**: [nrvertex.com](https://nrvertex.com)
+- **Servicios de Ubicación**: Buenos Aires (CABA y Gran Buenos Aires), Argentina.
+- **Canal de Contacto Principal**: [Agendar consulta vía WhatsApp](https://nrvertex.com/contacto)
+- **Garantía**: Si en 90 días el perfil del negocio no aparece en el Top 3 de los resultados de búsqueda local de Google, se continúa trabajando gratis hasta lograrlo.
+
+## Servicios Principales
+
+- **Posicionamiento en Google Maps / Google Business Profile (GBP)**:
+  - Auditoría inicial de visibilidad local.
+  - Creación, optimización técnica y verificación de perfiles de negocio en Google.
+  - Gestión estratégica de reseñas y respuestas para aumentar la confianza.
+  - Optimización On-Page local y enlazado geográfico estructurado.
+- **SEO Local Avanzado**:
+  - Segmentación de palabras clave con intención de búsqueda local específica para CABA y partidos de GBA.
+  - Configuración y diseño de landing pages y sitios web ultra-rápidos optimizados para dispositivos móviles.
+
+## Casos de Éxito
+
+- [Florería Liz (Villa del Parque, CABA)](https://nrvertex.com/src/casos/florerializ):
+  - **Problema**: Negocio invisible en Google sin recibir contactos digitales.
+  - **Resultado**: Posicionamiento #1 en Villa del Parque, llamadas diarias automáticas y aumento sostenido de ventas físicas y online en menos de 90 días.
+- [Albornoz Obras (CABA)](https://nrvertex.com/src/casos/albornoz-obras):
+  - **Problema**: Dificultades para captar clientes de obras y reformas de gran envergadura de forma orgánica.
+  - **Resultado**: Incremento masivo en consultas calificadas y solicitudes de presupuestos de obras corporativas y residenciales.
+
+## Artículos de Blog / Guías de SEO Local
+
+- [Cómo aparecer en Google Maps paso a paso](https://nrvertex.com/blog/como-aparecer-google-maps):
+  - Tutorial técnico integral para dar de alta un perfil de Google Business Profile, verificar la ubicación y completar la información esencial.
+- [Por qué mi negocio no aparece en Google Maps](https://nrvertex.com/blog/porque-mi-negocio-no-aparece):
+  - Diagnóstico de problemas comunes: suspensiones de cuenta, falta de verificación por tarjeta postal/video, filtros de proximidad y optimización deficiente.
+- [SEO Local en CABA y Buenos Aires](https://nrvertex.com/blog/seo-local-caba):
+  - Guía estratégica específica para competir en la región metropolitana de Buenos Aires, abordando keywords locales e intención transaccional.
+- [Optimización de Google Business Profile para Pymes](https://nrvertex.com/blog/google-business-profile-pymes):
+  - Checklist práctico de optimización diaria/semanal para captar más clics hacia la web y llamadas de clientes cualificados.
+- [Cómo aparecer primero en Google](https://nrvertex.com/blog/como-aparecer-primero-google):
+  - Fundamentos técnicos del algoritmo de búsqueda de Google y factores principales que influyen en el ranking orgánico y local.
