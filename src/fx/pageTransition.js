@@ -104,6 +104,42 @@ export function collapsePageTransition() {
 // ── Exportar alias para compatibilidad ───────────────────────────────────────
 export const collapseSlideTransition = collapsePageTransition;
 
+// ── Reiniciar panel de transición (ej: al retroceder o restaurar de cache) ────
+export function resetTransitionPanel() {
+  const panel = document.getElementById('nrv-transition-panel');
+  if (panel) {
+    panel.style.display = 'none';
+    panel.style.visibility = 'hidden';
+    panel.classList.remove('nrv-panel--enter', 'nrv-panel--exit');
+
+    const barEl = panel.querySelector('#nrv-tp-bar');
+    if (barEl) {
+      barEl.style.transition = 'none';
+      barEl.style.transform = 'scaleX(0)';
+    }
+  }
+
+  sessionStorage.removeItem('nrv-transition-incoming');
+
+  // Asegurar que el contenido del sitio no se quede oculto (FOUC prevention reset)
+  document.documentElement.classList.remove('nrv-transition-active');
+  const tempStyle = document.getElementById('nrv-fouc-temp-style');
+  if (tempStyle) tempStyle.remove();
+}
+
+// Registrar eventos globales para detectar navegación de historial y bfcache
+if (typeof window !== 'undefined') {
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      resetTransitionPanel();
+    }
+  });
+
+  window.addEventListener('popstate', () => {
+    resetTransitionPanel();
+  });
+}
+
 // ── Inicialización: registrar clicks en tarjetas ─────────────────────────────
 export function initPageTransitions() {
   // Pre-construir el panel en el DOM (sin mostrarlo)

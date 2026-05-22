@@ -55,7 +55,7 @@
     }
     .blog-hero-glow {
       position: absolute;
-      top: -20%;
+      top: -80px; /* Fixed position prevents CLS when elements or fonts adjust */
       left: 50%;
       transform: translateX(-50%);
       width: 600px;
@@ -63,6 +63,8 @@
       background: radial-gradient(circle, rgba(124,58,237,0.08) 0%, rgba(124,58,237,0) 70%);
       pointer-events: none;
       filter: blur(80px);
+      contain: strict; /* Isolate paint, layout, and size */
+      will-change: transform; /* Promote to compositor layer */
     }
     .blog-grid {
       display: grid;

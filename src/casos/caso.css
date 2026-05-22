@@ -58,6 +58,8 @@
   background: radial-gradient(circle, rgba(124, 58, 237, 0.09) 0%, transparent 60%);
   z-index: 1;
   pointer-events: none;
+  contain: layout paint style; /* Contain layout, paint, and styles inside the element boundaries */
+  will-change: transform; /* Promote to compositor layer to prevent recalculations on transition or scroll */
 }
 
 .caso-hero .container {

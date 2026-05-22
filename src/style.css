@@ -467,7 +467,7 @@ ul {
 
 .hero-glow {
   position: absolute;
-  top: 20%;
+  top: 160px; /* Fixed vertical position prevents CLS when page headings/elements adjust */
   left: 50%;
   margin-left: -400px;
   margin-top: -400px;
@@ -477,6 +477,8 @@ ul {
   border-radius: 50%;
   z-index: -1;
   pointer-events: none;
+  contain: strict; /* Contain layout, paint, and size changes inside the element boundaries */
+  will-change: transform; /* Promote to an independent layer to prevent repaints on transform */
 }
 
 .pill-badge {
@@ -2082,6 +2084,7 @@ ul {
     height: 400px !important;
     margin-left: -200px !important;
     margin-top: -200px !important;
+    top: 100px !important; /* Fixed position on mobile */
   }
 
   /* ── CONTAINER ── */

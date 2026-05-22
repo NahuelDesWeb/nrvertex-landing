@@ -10,11 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============ PAGE TRANSITION (PANEL CINEMATOGRÁFICO) ============
   // Se inicializa aquí, en DOMContentLoaded, para capturar clicks ANTES
   // que cualquier otro handler (modal, etc.).
+  initPageTransitions();
   if (sessionStorage.getItem('nrv-transition-incoming') === '1') {
     sessionStorage.removeItem('nrv-transition-incoming');
     requestAnimationFrame(() => requestAnimationFrame(() => collapsePageTransition()));
-  } else {
-    initPageTransitions();
   }
 
 
