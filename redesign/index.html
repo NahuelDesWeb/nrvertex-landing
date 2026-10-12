@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NRVERTEX Rediseño</title>
+<meta name="description" content="Posicionamos tu negocio en Google Maps para tu barrio de CABA. Sin publicidad paga, sin comisiones, sin intermediarios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: bloques de una pantalla que alternan negro y violeta (ritmo omniux);
+   barras con degradé que "suben" como un ranking (patrón Solitone). */
+:root{
+  --ink:#0B0B0C;        /* base */
+  --ink-2:#131317;      /* superficies */
+  --ink-3:#1C1B22;      /* superficies elevadas */
+  --line:#2A2933;       /* filetes */
+  --violet:#6A5AFF;     /* acento principal */
+  --violet-deep:#5B3DF5;
+  --blue:#3B5BFF;       /* solo en degradés del hero */
+  --paper:#F3F3F3;      /* texto principal */
+  --mute:#A3A3B2;       /* texto secundario (aluminio con sesgo violeta) */
+  --on-violet:#FFFFFF;
+  --violet-ink:#1A0F6B; /* texto oscuro sobre violeta */
+  --f-display:"Geist", "Helvetica Neue", Arial, sans-serif;
+  --f-body:"Inter", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --gutter:clamp(16px, 4vw, 56px);
+  --max:1280px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--paper);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.035em;line-height:.95}
+p{margin:0}
+:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font:500 12px/1.2 var(--f-mono);text-transform:uppercase;letter-spacing:.14em;color:var(--mute);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:8px;height:8px;background:var(--violet);display:inline-block}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- Botones ---------- */
+.btn{--bg:var(--violet);--fg:var(--on-violet);position:relative;display:inline-flex;align-items:center;gap:12px;padding:16px 26px;background:var(--bg);color:var(--fg);font:600 16px/1 var(--f-display);letter-spacing:-.01em;text-decoration:none;border:1px solid var(--bg);transition:transform .35s var(--ease),background .25s,color .25s,border-color .25s;will-change:transform}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn:hover{--bg:#7D6FFF}
+.btn--ghost{--bg:transparent;--fg:var(--paper);border-color:var(--line)}
+.btn--ghost:hover{--bg:transparent;border-color:var(--paper)}
+.btn--light{--bg:var(--paper);--fg:var(--violet-ink)}
+.btn--light:hover{--bg:#FFFFFF}
+.btn--sm{padding:11px 16px;font-size:14px}
+
+/* ---------- Header ---------- */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.hdr.is-scrolled{background:rgba(11,11,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 19px/1 var(--f-display);letter-spacing:-.02em}
+.brand__mark{display:flex;align-items:flex-end;gap:2px;height:20px}
+.brand__mark i{display:block;width:5px;background:linear-gradient(to top,var(--violet-deep),var(--violet))}
+.brand__mark i:nth-child(1){height:40%}.brand__mark i:nth-child(2){height:70%}.brand__mark i:nth-child(3){height:100%}
+.nav{display:flex;gap:30px}
+.nav a{text-decoration:none;font:500 15px/1 var(--f-display);color:var(--mute);transition:color .2s}
+.nav a:hover{color:var(--paper)}
+@media (max-width:860px){.nav{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding-top:calc(72px + clamp(48px,8vw,110px));padding-bottom:clamp(40px,6vw,72px);overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:120%;z-index:-2;
+  background:radial-gradient(60% 50% at 78% 30%,rgba(106,90,255,.32),transparent 70%),radial-gradient(40% 40% at 95% 75%,rgba(59,91,255,.22),transparent 70%)}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+@media (max-width:980px){.hero__grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(40px,10.4vw,164px);font-weight:900;text-transform:uppercase;letter-spacing:-.055em;line-height:.86;margin-top:22px;margin-bottom:clamp(36px,5vw,64px)}
+.hero h1 .ln{display:block;overflow:hidden;white-space:nowrap;padding-block:.1em .03em;margin-top:-.13em}
+.hero h1 .ln span{display:inline-block;animation:rise 1s var(--ease) both}
+.hero h1 .ln:nth-child(2) span{animation-delay:.08s}
+.hero h1 .ln:nth-child(3) span{animation-delay:.16s}
+.hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--violet) 10%,#9C8FFF 55%,var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero__lead{max-width:34em;font-size:clamp(17px,1.5vw,21px);color:var(--mute)}
+.hero__lead strong{color:var(--paper);font-weight:600}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.hero__note{margin-top:22px;font:400 13px/1.5 var(--f-mono);color:var(--mute);letter-spacing:.02em}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+
+/* Ranking en vivo (caso real FloreríaLiz) */
+.rank{background:var(--ink-2);border:1px solid var(--line);padding:18px;position:relative}
+.rank__q{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--ink-3);border:1px solid var(--line);border-radius:999px;font:400 14px/1 var(--f-body);color:var(--paper)}
+.rank__q svg{width:16px;height:16px;flex:none;color:var(--mute)}
+.rank__list{position:relative;height:calc(4 * 74px);margin-top:14px}
+.rank__row{position:absolute;left:0;right:0;height:66px;display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:12px;padding:0 14px;border:1px solid var(--line);background:var(--ink);transform:translateY(calc(var(--p) * 74px));transition:transform 1.4s var(--ease),border-color .6s,background .6s}
+.rank__pos{font:600 13px/1 var(--f-mono);color:var(--mute)}
+.rank__name{font:600 15px/1.2 var(--f-display);letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank__meta{display:block;font:400 12px/1.4 var(--f-body);color:var(--mute);margin-top:3px}
+.rank__star{font:500 13px/1 var(--f-mono);color:var(--paper)}
+.rank__row.is-us{background:linear-gradient(90deg,rgba(106,90,255,.28),rgba(106,90,255,.08));border-color:var(--violet)}
+.rank__row.is-us .rank__pos{color:var(--paper)}
+.rank__row.is-out{opacity:.45}
+.rank__foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:6px;font:500 11px/1.4 var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.rank__foot b{color:var(--paper);font-weight:500}
+
+/* Barras que suben (patrón de marca) */
+.bars{position:absolute;inset:auto 0 0 0;height:min(46vw,420px);display:flex;align-items:flex-end;gap:clamp(4px,1vw,14px);padding-inline:var(--gutter);z-index:-1;pointer-events:none;opacity:.55;
+  -webkit-mask-image:linear-gradient(to top,#000 10%,transparent);mask-image:linear-gradient(to top,#000 10%,transparent)}
+.bars i{flex:1;height:var(--h);background:linear-gradient(to top,transparent,rgba(106,90,255,.55) 60%,rgba(106,90,255,.9));transform-origin:bottom;animation:grow 1.6s var(--ease) both;animation-delay:calc(var(--i) * 45ms)}
+@keyframes grow{from{transform:scaleY(.15)}to{transform:none}}
+
+/* ---------- Trust bar ---------- */
+.trust{border-block:1px solid var(--line);background:var(--ink)}
+.trust__in{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.trust__item{padding:28px clamp(12px,2vw,28px);border-left:1px solid var(--line);display:flex;flex-direction:column;gap:8px;min-width:0}
+.trust__item:first-child{border-left:0;padding-left:0}
+.trust__v{font:800 clamp(30px,3.4vw,46px)/1 var(--f-display);letter-spacing:-.04em}
+.trust__k{font:400 13px/1.45 var(--f-body);color:var(--mute)}
+.trust__k b{font-weight:500;color:var(--paper)}
+@media (max-width:980px){.trust__in{grid-template-columns:repeat(2,minmax(0,1fr))}.trust__item{border-left:0;border-top:1px solid var(--line);padding-left:0}.trust__item:nth-child(-n+2){border-top:0}.trust__item:last-child{grid-column:1/-1}}
+
+/* ---------- Secciones ---------- */
+.sec{padding-block:clamp(80px,11vw,160px)}
+.sec__head{display:flex;flex-direction:column;gap:20px;max-width:900px;margin-bottom:clamp(40px,6vw,72px)}
+.sec__head h2{font-size:clamp(40px,6.4vw,92px);font-weight:900}
+.sec__head p{color:var(--mute);max-width:36em;font-size:18px}
+
+/* ---------- Casos ---------- */
+.case{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(72px,9vw,130px)}
+.case--violet{background:linear-gradient(160deg,var(--violet) 0%,var(--violet-deep) 100%);color:var(--on-violet)}
+.case--dark{background:var(--ink-2)}
+.case__grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(36px,5vw,80px);align-items:center}
+@media (max-width:980px){.case__grid{grid-template-columns:1fr}}
+.case .eyebrow{color:inherit;opacity:.85}
+.case--violet .eyebrow::before{background:var(--on-violet)}
+.case h3{font-size:clamp(34px,4.6vw,64px);font-weight:800;margin-top:20px;max-width:14em}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.5vw,40px);margin-top:clamp(56px,7vw,96px);border-top:1px solid currentColor;border-color:rgba(255,255,255,.28);padding-top:28px}
+.case--dark .metrics{border-color:var(--line)}
+.metric{min-width:0}
+.metric__v{display:flex;align-items:flex-start;gap:.06em;font:800 clamp(56px,6.6vw,112px)/.9 var(--f-display);letter-spacing:-.06em;white-space:nowrap}
+.metric__v small{font-size:.42em;letter-spacing:-.02em;margin-top:.12em}
+.metric__v .arr{width:.32em;height:.32em;margin-top:.06em;flex:none}
+.metric__k{margin-top:14px;font:400 14px/1.45 var(--f-body);opacity:.85;max-width:15em}
+@media (max-width:640px){.metrics{grid-template-columns:1fr}.metric{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:end}.metric__k{margin-top:0}}
+.case__actions{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:40px}
+.case__link{font:600 15px/1 var(--f-display);text-decoration:none;display:inline-flex;gap:10px;align-items:center;border-bottom:1px solid currentColor;padding-bottom:6px}
+.shot{position:relative;margin:0}
+.shot__frame{background:var(--ink);padding:10px;box-shadow:0 40px 80px -30px rgba(10,6,40,.6);transform:rotate(-1.2deg);transition:transform .6s var(--ease)}
+.shot:hover .shot__frame{transform:rotate(0) scale(1.01)}
+.shot__frame img{width:100%;height:auto}
+.shot figcaption{margin-top:16px;font:500 11px/1.5 var(--f-mono);text-transform:uppercase;letter-spacing:.12em;opacity:.8}
+.case__bars{position:absolute;right:0;bottom:0;width:55%;height:70%;display:flex;align-items:flex-end;gap:10px;z-index:-1;opacity:.5;pointer-events:none}
+.case__bars i{flex:1;height:var(--h);background:linear-gradient(to top,transparent,rgba(106,90,255,.7))}
+.case--violet .case__bars i{background:linear-gradient(to top,transparent,rgba(255,255,255,.14))}
+.case__before{display:inline-block;margin-top:22px;font:500 13px/1.4 var(--f-mono);padding:8px 12px;border:1px solid rgba(255,255,255,.35)}
+.case--dark .case__before{border-color:var(--line);color:var(--mute)}
+.case__before b{font-weight:500}
+
+/* ---------- Servicios ---------- */
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (max-width:980px){.svc{grid-template-columns:1fr}}
+.svc__card{background:var(--ink);padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:20px;min-width:0;transition:background .4s}
+.svc__card:hover{background:var(--ink-2)}
+.svc__card.is-main{background:linear-gradient(180deg,rgba(106,90,255,.16),var(--ink) 70%)}
+.svc__tag{font:500 12px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.14em;color:var(--violet)}
+.svc__card h3{font-size:clamp(28px,2.6vw,38px);font-weight:800;letter-spacing:-.035em;line-height:1}
+.svc__card p{color:var(--mute);font-size:16px}
+.svc__list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:20px;font-size:15px}
+.svc__list li{display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:baseline}
+.svc__list li::before{content:"";width:8px;height:8px;background:var(--violet);transform:translateY(-1px)}
+.svc__card .btn{margin-top:auto;align-self:flex-start}
+
+/* Planes */
+.plans{margin-top:clamp(56px,7vw,96px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2fr);gap:clamp(24px,4vw,64px);align-items:start}
+@media (max-width:980px){.plans{grid-template-columns:1fr}}
+.plans h3{font-size:clamp(28px,3vw,42px);font-weight:800}
+.plans__intro p{color:var(--mute);margin-top:16px;font-size:16px}
+.plans__row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.plans__row{grid-template-columns:1fr}}
+.plan{border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.plan__n{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.plan h4{margin:0;font:800 24px/1 var(--f-display);letter-spacing:-.03em}
+.plan p{font-size:15px;color:var(--mute)}
+.plan__fit{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:14px}
+.plan__fit b{font-weight:600;color:var(--paper)}
+
+/* ---------- Ceros ---------- */
+.zeros{background:var(--ink);border-top:1px solid var(--line);padding-bottom:clamp(40px,5vw,72px)}
+.zeros__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+@media (max-width:980px){.zeros__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.zeros__grid{grid-template-columns:1fr}}
+.zero{padding:32px 24px 36px 0;display:flex;flex-direction:column;gap:14px;min-width:0;border-bottom:1px solid var(--line)}
+.zero__0{font:900 clamp(88px,10vw,150px)/.8 var(--f-display);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px var(--violet);transition:color .5s var(--ease)}
+.zero:hover .zero__0{color:var(--violet)}
+.zero h3{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.zero p{color:var(--mute);font-size:15px}
+
+/* ---------- Testimonios ---------- */
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.quotes{grid-template-columns:1fr}}
+.q{background:var(--ink-2);border-top:2px solid var(--violet);padding:clamp(28px,3.5vw,48px);display:flex;flex-direction:column;gap:26px;min-width:0}
+.q__who{display:flex;align-items:center;gap:18px}
+.q__av{width:64px;height:64px;flex:none;display:grid;place-items:center;background:var(--violet);font:800 28px/1 var(--f-display);color:var(--on-violet)}
+.q__name{font:900 clamp(32px,3.6vw,52px)/.95 var(--f-display);letter-spacing:-.045em}
+.q__role{font-size:14px;color:var(--mute);margin-top:6px}
+.q blockquote{margin:0;font-size:clamp(17px,1.4vw,19px);line-height:1.6}
+.q blockquote::before{content:"“";display:block;font:900 72px/.6 var(--f-display);color:var(--violet);margin-bottom:6px}
+.q__src{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font:500 11px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.12em;color:var(--mute)}
+.q__src::before{content:"";width:7px;height:7px;border-radius:50%;background:#3DDC84}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(32px,5vw,80px);align-items:start}
+@media (max-width:900px){.faq{grid-template-columns:1fr}}
+.faq__head{position:sticky;top:calc(96px + env(safe-area-inset-top,0px))}
+@media (max-width:900px){.faq__head{position:static}}
+.faq__head h2{font-size:clamp(40px,5.4vw,80px);font-weight:900}
+.faq__head p{color:var(--mute);margin-top:20px}
+.faq__head .btn{margin-top:28px}
+.acc{border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 28px;gap:20px;align-items:center;padding:26px 0;font:700 clamp(19px,1.8vw,24px)/1.25 var(--f-display);letter-spacing:-.02em}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:#BDB6FF}
+.acc .pm{position:relative;width:28px;height:28px;border:1px solid var(--line)}
+.acc .pm::before,.acc .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .35s var(--ease)}
+.acc .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.acc details[open] .pm{background:var(--violet);border-color:var(--violet)}
+.acc details[open] .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.acc .ans{padding:0 48px 28px 0;color:var(--mute);display:flex;flex-direction:column;gap:12px;max-width:44em}
+.acc .ans strong{color:var(--paper);font-weight:600}
+
+/* ---------- CTA final ---------- */
+.final{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(170deg,var(--violet-deep),#2A1A9E 70%,var(--ink));padding-block:clamp(90px,12vw,170px);color:var(--on-violet)}
+.final h2{font-size:clamp(46px,9vw,140px);font-weight:900;text-transform:uppercase;letter-spacing:-.055em;line-height:.88;max-width:11em}
+.final p{max-width:34em;font-size:clamp(17px,1.5vw,20px);margin-top:28px;opacity:.9}
+.final__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.final .btn--ghost{--fg:var(--on-violet);border-color:rgba(255,255,255,.4)}
+.final .btn--ghost:hover{border-color:#fff}
+.final .bars{opacity:.35}
+.final .bars i{background:linear-gradient(to top,transparent,rgba(255,255,255,.3))}
+
+/* ---------- Footer ---------- */
+.ftr{background:var(--ink);padding-block:72px 40px;border-top:1px solid var(--line)}
+.ftr__top{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:40px}
+@media (max-width:760px){.ftr__top{grid-template-columns:1fr}}
+.ftr__slogan{font:800 clamp(26px,2.6vw,36px)/1.05 var(--f-display);letter-spacing:-.03em;margin-top:22px;max-width:12em}
+.ftr h4{margin:0 0 16px;font:500 12px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.14em;color:var(--mute)}
+.ftr ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.ftr ul a{text-decoration:none;color:var(--paper);opacity:.85}
+.ftr ul a:hover{opacity:1;color:#BDB6FF}
+.ftr__sel{user-select:all;font-family:var(--f-mono);font-size:14px}
+.ftr__bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:64px;padding-top:24px;border-top:1px solid var(--line);font:400 13px/1.4 var(--f-mono);color:var(--mute)}
+
+/* Revelado al hacer scroll: solo transform, el contenido nunca queda invisible */
+.js .rv{transform:translateY(36px);transition:transform 1s var(--ease)}
+.js .rv.in{transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .rv{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="top">
+  <div class="wrap hdr__in">
+    <a class="brand" href="#top" aria-label="NRVERTEX, inicio">
+      <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>NRVERTEX
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#casos">Casos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <a class="btn btn--sm" data-wa="Hola, vengo desde la web de NRVERTEX y quiero agendar una consulta gratis." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Agendá por WhatsApp</a>
+  </div>
+</header>
+
+<main>
+  <!-- 2. HERO -->
+  <section class="hero" aria-labelledby="hero-t">
+    <div class="bars" aria-hidden="true" data-bars="22"></div>
+    <div class="wrap">
+      <span class="eyebrow">Posicionamiento local en Google Maps · CABA</span>
+      <h1 id="hero-t">
+        <span class="ln"><span>Dejamos tu</span></span>
+        <span class="ln"><span>marca en lo</span></span>
+        <span class="ln"><span>más <em>alto.</em></span></span>
+      </h1>
+    </div>
+    <div class="wrap hero__grid">
+      <div>
+        <p class="hero__lead">Hacemos que los vecinos que te buscan en Google Maps <strong>te encuentren primero a vos</strong>, y no a la competencia. Sin publicidad paga, sin comisiones, sin intermediarios.</p>
+        <div class="hero__cta">
+          <a class="btn" data-wa="Hola, vengo desde la web de NRVERTEX y quiero agendar una consulta gratis de 20 minutos." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Agendá tu consulta gratis
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost" href="#casos">Ver resultados reales</a>
+        </div>
+        <p class="hero__note">Consulta de 20 min por WhatsApp · Te respondemos nosotros, no un bot</p>
+      </div>
+
+      <figure class="rank" aria-label="Caso real: FloreríaLiz pasó de no figurar en el top 10 al primer lugar en Villa del Parque">
+        <div class="rank__q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>florerías en villa del parque</div>
+        <div class="rank__list" id="rank">
+          <div class="rank__row is-us" data-from="3" style="--p:0"><span class="rank__pos num">01</span><span class="rank__name">Florería Liz<span class="rank__meta">Villa del Parque · Abierto</span></span><span class="rank__star num">★ 5,0</span></div>
+          <div class="rank__row" data-from="0" style="--p:1"><span class="rank__pos num">02</span><span class="rank__name">Florería La Estrella<span class="rank__meta">Floristería · 128 reseñas</span></span><span class="rank__star num">★ 4,3</span></div>
+          <div class="rank__row" data-from="1" style="--p:2"><span class="rank__pos num">03</span><span class="rank__name">La Rosa de Cristal<span class="rank__meta">Floristería · 9 reseñas</span></span><span class="rank__star num">★ 4,0</span></div>
+          <div class="rank__row is-out" data-from="2" style="--p:3"><span class="rank__pos num">…</span><span class="rank__name">Resto de la zona<span class="rank__meta">Fuera de las primeras posiciones</span></span><span class="rank__star"></span></div>
+        </div>
+        <figcaption class="rank__foot"><span>Oct 2025: <b>fuera del top 10</b></span><span>Hoy: <b>#1 en su barrio</b></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3. TRUST BAR -->
+  <section class="trust" aria-label="Resultados reales de clientes">
+    <div class="wrap trust__in">
+      <div class="trust__item"><span class="trust__v num">+107</span><span class="trust__k">llamadas por mes · <b>FloreríaLiz</b></span></div>
+      <div class="trust__item"><span class="trust__v num">+457</span><span class="trust__k">clics en "Cómo llegar" por mes · <b>FloreríaLiz</b></span></div>
+      <div class="trust__item"><span class="trust__v num">+1.171%</span><span class="trust__k">interacciones en Google Maps · <b>AlbornozObras</b></span></div>
+      <div class="trust__item"><span class="trust__v num">+$8,3M</span><span class="trust__k">en trabajos cerrados · <b>AlbornozObras</b></span></div>
+      <div class="trust__item"><span class="trust__v num">$0</span><span class="trust__k">invertidos en publicidad paga · <b>en los dos casos</b></span></div>
+    </div>
+  </section>
+
+  <!-- 4. CASOS -->
+  <div id="casos">
+    <section class="sec wrap" aria-labelledby="casos-t" style="padding-bottom:clamp(48px,6vw,80px)">
+      <div class="sec__head rv">
+        <span class="eyebrow">Casos de éxito</span>
+        <h2 id="casos-t">Resultados reales. Capturas reales.</h2>
+        <p>Cada número sale del panel de Google del negocio. Sin retoques y sin promesas: lo que pasó, contado con los datos.</p>
+      </div>
+    </section>
+
+    <section class="case case--violet" aria-labelledby="c1-t">
+      <div class="case__bars" aria-hidden="true" data-bars="9"></div>
+      <div class="wrap case__grid">
+        <div class="rv">
+          <span class="eyebrow">FloreríaLiz · Florería · Villa del Parque, CABA</span>
+          <h3 id="c1-t">De no aparecer en Google a ser la primera opción del barrio.</h3>
+          <span class="case__before">Antes · Oct 2025: <b>0 interacciones</b> en su ficha</span>
+          <div class="case__actions">
+            <a class="btn btn--light" href="https://nrvertex.com/src/casos/florerializ" target="_blank" rel="noopener">Ver el caso completo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="case__link" data-wa="Hola, vi el caso de FloreríaLiz y quiero resultados así para mi negocio." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Quiero resultados como Liz</a>
+          </div>
+        </div>
+        <figure class="shot rv">
+          <div class="shot__frame"><img src="img/floreria-despues-search.webp" width="1024" height="689" loading="lazy" decoding="async" alt="Captura de Google: búsqueda 'florerías en villa del parque' con Florería Liz en el primer lugar de Sitios, 5,0 estrellas."></div>
+          <figcaption>Captura real · búsqueda "florerías en villa del parque"</figcaption>
+        </figure>
+      </div>
+      <div class="wrap">
+          <div class="metrics">
+            <div class="metric"><div class="metric__v num">+107</div><p class="metric__k">llamadas directas por mes</p></div>
+            <div class="metric"><div class="metric__v num">+457</div><p class="metric__k">clics en "Cómo llegar" por mes</p></div>
+            <div class="metric"><div class="metric__v num"><small>#</small>1</div><p class="metric__k">en Google Maps para Villa del Parque</p></div>
+          </div>
+      </div>
+    </section>
+
+    <section class="case case--dark" aria-labelledby="c2-t">
+      <div class="case__bars" aria-hidden="true" data-bars="9"></div>
+      <div class="wrap case__grid">
+        <div class="rv">
+          <span class="eyebrow">AlbornozObras · Construcción y reformas · CABA</span>
+          <h3 id="c2-t">Multiplicó sus pedidos de presupuesto con $0 en publicidad.</h3>
+          <span class="case__before">Antes · no figuraba en el <b>top 20</b> de su rubro</span>
+          <div class="case__actions">
+            <a class="btn" href="https://nrvertex.com/src/casos/albornoz-obras" target="_blank" rel="noopener">Ver el caso completo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="case__link" data-wa="Hola, vi el caso de AlbornozObras y quiero más pedidos de presupuesto." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Quiero más presupuestos</a>
+          </div>
+        </div>
+        <figure class="shot rv">
+          <div class="shot__frame"><img src="img/obras-despues-search.webp" width="913" height="928" loading="lazy" decoding="async" alt="Captura de Google Maps: búsqueda 'construccion en seco' con AlbornozObras entre los primeros resultados, 4,9 estrellas."></div>
+          <figcaption>Captura real · búsqueda "construcción en seco"</figcaption>
+        </figure>
+      </div>
+      <div class="wrap">
+          <div class="metrics">
+            <div class="metric"><div class="metric__v num">+1.171<small>%</small></div><p class="metric__k">interacciones en Google Maps</p></div>
+            <div class="metric"><div class="metric__v num">+$8,3<small>M</small></div><p class="metric__k">en trabajos cerrados</p></div>
+            <div class="metric"><div class="metric__v num"><small>TOP</small>3</div><p class="metric__k">para "construcción en seco"</p></div>
+          </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 5. SERVICIOS + PLANES -->
+  <section class="sec" id="servicios" aria-labelledby="svc-t">
+    <div class="wrap">
+      <div class="sec__head rv">
+        <span class="eyebrow">Servicios</span>
+        <h2 id="svc-t">Un sistema, no piezas sueltas.</h2>
+        <p>Tu ficha de Google y tu página trabajan juntas, y nosotros las mantenemos activas todos los meses. Vos seguís atendiendo tu negocio.</p>
+      </div>
+
+      <div class="svc rv">
+        <article class="svc__card is-main">
+          <span class="svc__tag">Google Maps</span>
+          <h3>Posicionamiento en Maps</h3>
+          <p>Trabajamos tu ficha de Google todos los meses para que aparezcas cuando alguien de tu zona busca lo que hacés.</p>
+          <ul class="svc__list">
+            <li>Ficha optimizada con las palabras que usa tu cliente y tu barrio</li>
+            <li>Publicaciones geolocalizadas 2 veces por semana</li>
+            <li>Gestión y respuesta de reseñas</li>
+            <li>Informe mensual con posiciones reales y llamadas</li>
+          </ul>
+          <a class="btn" data-wa="Hola, quiero consultar por el posicionamiento en Google Maps." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Quiero aparecer en Maps
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="svc__card">
+          <span class="svc__tag">Página web</span>
+          <h3>Diseño web</h3>
+          <p>Una página pensada para que la visita que llega desde Maps termine en un llamado o un WhatsApp.</p>
+          <ul class="svc__list">
+            <li>Diseño a medida, no una plantilla</li>
+            <li>Rápida y clara en el celular</li>
+            <li>WhatsApp siempre a un toque</li>
+            <li>Conectada con tu ficha de Google</li>
+          </ul>
+          <a class="btn btn--ghost" data-wa="Hola, quiero consultar por el diseño de una página web para mi negocio." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Quiero mi página
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="svc__card">
+          <span class="svc__tag">A medida</span>
+          <h3>Lo que tu negocio necesite</h3>
+          <p>¿Buscás algo que no está en la lista? Contanos qué te frena y armamos la solución con vos.</p>
+          <ul class="svc__list">
+            <li>Revisamos tu ficha y la de tus 3 competidores principales</li>
+            <li>Te decimos qué conviene hacer primero</li>
+            <li>Propuesta por escrito, sin compromiso</li>
+          </ul>
+          <a class="btn btn--ghost" data-wa="Hola, necesito algo a medida para mi negocio. Les cuento:" href="https://wa.me/5491172383806" target="_blank" rel="noopener">Contanos tu caso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+
+      <div class="plans rv" id="planes">
+        <div class="plans__intro">
+          <span class="eyebrow">Sistema de Dominio Local™</span>
+          <h3 style="margin-top:18px">Tres formas de arrancar.</h3>
+          <p>El precio depende del plan y de cómo está hoy tu negocio en Google. Te lo pasamos por escrito después de la consulta.</p>
+        </div>
+        <div class="plans__row">
+          <div class="plan">
+            <span class="plan__n">Plan 1</span>
+            <h4>Acceso</h4>
+            <p>Nosotros ponemos dominio, hosting y página. Arrancás con poca inversión inicial.</p>
+            <p class="plan__fit"><b>Ideal si</b> todavía no tenés página propia.</p>
+          </div>
+          <div class="plan">
+            <span class="plan__n">Plan 2</span>
+            <h4>Propietario</h4>
+            <p>Armamos tu página y la subimos al dominio de tu negocio. Ficha y página trabajando juntas.</p>
+            <p class="plan__fit"><b>Ideal si</b> querés que todo quede a nombre de tu negocio.</p>
+          </div>
+          <div class="plan">
+            <span class="plan__n">Plan 3</span>
+            <h4>Solo Visibilidad</h4>
+            <p>Trabajamos únicamente tu ficha de Google. Tu página actual no se toca.</p>
+            <p class="plan__fit"><b>Ideal si</b> ya tenés web y solo te falta aparecer en Maps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reglas de oro -->
+  <section class="sec zeros" aria-labelledby="zeros-t">
+    <div class="wrap">
+      <div class="sec__head rv">
+        <span class="eyebrow">Por qué NRVERTEX</span>
+        <h2 id="zeros-t">Cuatro ceros que no negociamos.</h2>
+      </div>
+      <div class="zeros__grid">
+        <div class="zero rv"><span class="zero__0" aria-hidden="true">0</span><h3>Comisión</h3><p>Los clientes que te contactan son de tu negocio. No cobramos porcentaje sobre los trabajos que cerrás.</p></div>
+        <div class="zero rv"><span class="zero__0" aria-hidden="true">0</span><h3>Intermediarios</h3><p>Los mensajes llegan directo a tu WhatsApp. No nos metemos entre vos y tu cliente.</p></div>
+        <div class="zero rv"><span class="zero__0" aria-hidden="true">0</span><h3>Publicidad paga</h3><p>Todo es orgánico. Los anuncios desaparecen cuando dejás de pagarlos; esto se construye mes a mes.</p></div>
+        <div class="zero rv"><span class="zero__0" aria-hidden="true">0</span><h3>Relleno</h3><p>Cada mes te mostramos qué se hizo y qué resultado dio, con números reales.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. TESTIMONIOS -->
+  <section class="sec" id="testimonios" aria-labelledby="tst-t" style="background:var(--ink)">
+    <div class="wrap">
+      <div class="sec__head rv">
+        <span class="eyebrow">Testimonios</span>
+        <h2 id="tst-t">Lo dicen ellos, no nosotros.</h2>
+      </div>
+      <div class="quotes">
+        <article class="q rv">
+          <div class="q__who"><span class="q__av" aria-hidden="true">L</span><div><div class="q__name">Liz</div><div class="q__role">FloreríaLiz · Villa del Parque, CABA</div></div></div>
+          <blockquote>Sinceramente no esperaba ver resultados tan rápido. Antes ni siquiera aparecíamos en Google, pero armaron nuestro perfil desde cero y hoy somos la opción número uno en Villa del Parque. En menos de 90 días empezamos a recibir llamadas constantes y clientes nuevos que llegan solos al local. Fue un antes y un después absoluto para las ventas de la florería.</blockquote>
+          <span class="q__src">Captura real · WhatsApp</span>
+        </article>
+        <article class="q rv">
+          <div class="q__who"><span class="q__av" aria-hidden="true">R</span><div><div class="q__name">Roberto A.</div><div class="q__role">AlbornozObras · CABA</div></div></div>
+          <blockquote>Antes literalmente nadie nos encontraba. Desde que empezamos a trabajar con ellos, las consultas por nuevos proyectos no paran de llegar. En solo tres meses recibimos decenas de pedidos de presupuesto para obras grandes, lo que nos permitió cerrar tratos muy rentables. La inversión inicial se pagó sola rapidísimo.</blockquote>
+          <span class="q__src">Captura real · WhatsApp</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="sec" id="preguntas" aria-labelledby="faq-t" style="border-top:1px solid var(--line)">
+    <div class="wrap faq">
+      <div class="faq__head">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2 id="faq-t" style="margin-top:20px">Lo que nos preguntan antes de arrancar.</h2>
+        <p>¿Te quedó otra duda? Escribinos y te contestamos nosotros.</p>
+        <a class="btn btn--ghost" data-wa="Hola, tengo una pregunta antes de arrancar:" href="https://wa.me/5491172383806" target="_blank" rel="noopener">Hacer una pregunta</a>
+      </div>
+      <div class="acc">
+        <details open>
+          <summary>¿Cuánto cuesta?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Depende del plan y de cómo está hoy tu negocio en Google. No tiramos números al aire: en la consulta gratis vemos tu caso y después te mandamos una <strong>propuesta por escrito</strong> con lo que incluye cada plan.</p><p>Lo que sí es fijo: <strong>no cobramos comisión</strong> sobre los trabajos que cierres.</p></div>
+        </details>
+        <details>
+          <summary>¿A nombre de quién queda la página y la ficha de Google?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>La <strong>ficha de Google queda a nombre de tu negocio</strong> en cualquier plan.</p><p>En el plan <strong>Propietario</strong>, la página se sube al dominio de tu negocio. En el plan <strong>Acceso</strong>, nosotros ponemos dominio, hosting y página; si el servicio se pausa, la página también. En <strong>Solo Visibilidad</strong> tu página actual no se toca.</p></div>
+        </details>
+        <details>
+          <summary>¿Cuánto tarda en verse el resultado?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Es un proceso que madura con el tiempo: tomamos <strong>60 a 90 días</strong> como referencia. Hay negocios que notan cambios antes, pero no te vamos a vender algo instantáneo.</p><p>FloreríaLiz, por ejemplo, empezó en octubre de 2025 sin aparecer en el top 10 de su barrio y hoy está primera.</p></div>
+        </details>
+        <details>
+          <summary>¿Me garantizan el primer puesto?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>No. Google no lo controla nadie, y desconfiá de quien te prometa un puesto o una cantidad de llamadas.</p><p>Lo que sí te damos es <strong>transparencia total</strong>: cada mes te mostramos qué hicimos y qué resultado dio, con los números del panel de Google de tu negocio.</p></div>
+        </details>
+        <details>
+          <summary>¿Tengo que dedicarle tiempo?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>Muy poco. Necesitamos que nos mandes <strong>fotos y videos de tus trabajos</strong> y que estés atento al WhatsApp cuando te llegue un cliente nuevo. El resto lo hacemos nosotros.</p></div>
+        </details>
+        <details>
+          <summary>¿Necesito entender la parte técnica?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans"><p>No. Te explicamos todo en criollo y los informes muestran lo que te importa: cuántas personas te encontraron, cuántas te llamaron y cuántas te pidieron cómo llegar.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CTA FINAL -->
+  <section class="final" aria-labelledby="final-t">
+    <div class="bars" aria-hidden="true" data-bars="22"></div>
+    <div class="wrap">
+      <span class="eyebrow" style="color:inherit">Empezá hoy</span>
+      <h2 id="final-t" style="margin-top:22px">Si te buscan, que te encuentren.</h2>
+      <p>Agendá una consulta gratis de 20 minutos. Vemos cómo está tu negocio en Google y te mostramos exactamente qué haríamos.</p>
+      <div class="final__cta">
+        <a class="btn btn--light" data-wa="Hola, vengo desde la web de NRVERTEX y quiero agendar una consulta gratis de 20 minutos." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Agendá por WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/nrvertex" target="_blank" rel="noopener">Escribinos por Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 9. FOOTER -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__top">
+      <div>
+        <a class="brand" href="#top"><span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>NRVERTEX</a>
+        <p class="ftr__slogan">Dejamos tu marca en lo más alto.</p>
+      </div>
+      <div>
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="#casos">Casos de éxito</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="https://nrvertex.com/blog" target="_blank" rel="noopener">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a data-wa="Hola, vengo desde la web de NRVERTEX." href="https://wa.me/5491172383806" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><span class="ftr__sel">+54 9 11 7238-3806</span></li>
+          <li><a href="https://www.instagram.com/nrvertex" target="_blank" rel="noopener">Instagram · @nrvertex</a></li>
+          <li style="color:var(--mute)">CABA, Buenos Aires</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__bottom"><span>© 2026 NRVERTEX</span><span>Posicionamiento local · Google Maps · CABA</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var d=document,root=d.documentElement;
+  root.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Links de WhatsApp con mensaje precargado
+  d.querySelectorAll('[data-wa]').forEach(function(a){
+    a.href='https://wa.me/5491172383806?text='+encodeURIComponent(a.getAttribute('data-wa'));
+  });
+
+  // Barras que suben (alturas crecientes con leve variación)
+  d.querySelectorAll('[data-bars]').forEach(function(el){
+    var n=+el.getAttribute('data-bars'),html='';
+    for(var i=0;i<n;i++){
+      var h=18+Math.pow((i+1)/n,1.6)*82+(i%3===1?-6:i%4===0?4:0);
+      html+='<i style="--h:'+Math.min(100,Math.max(8,h)).toFixed(1)+'%;--i:'+i+'"></i>';
+    }
+    el.innerHTML=html;
+  });
+
+  // Header con fondo al scrollear
+  var hdr=d.querySelector('.hdr');
+  function onScroll(){hdr.classList.toggle('is-scrolled',window.scrollY>12)}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Ranking: FloreríaLiz sube desde el fondo hasta el #1 (estado final ya visible sin JS)
+  var rows=[].slice.call(d.querySelectorAll('#rank .rank__row'));
+  function label(r,p){r.querySelector('.rank__pos').textContent=p>2?'…':'0'+(p+1)}
+  if(!reduce && rows.length){
+    rows.forEach(function(r){var p=+r.getAttribute('data-from');r.style.transition='none';r.style.setProperty('--p',p);label(r,p)});
+    rows[0].classList.remove('is-us');rows[0].classList.add('is-out');
+    rows[3].classList.remove('is-out');
+    setTimeout(function(){
+      rows.forEach(function(r,i){r.style.transition='';r.style.setProperty('--p',i);label(r,i)});
+      rows[0].classList.remove('is-out');rows[3].classList.add('is-out');
+      setTimeout(function(){rows[0].classList.add('is-us')},700);
+    },900);
+  }
+
+  // Revelado suave al entrar en pantalla (solo desplazamiento)
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    d.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  }else{d.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
+
+  // Botones magnéticos (solo con mouse)
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches && !reduce){
+    d.querySelectorAll('.btn').forEach(function(b){
+      b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.12)+'px,'+((e.clientY-r.top-r.height/2)*.2)+'px)'});
+      b.addEventListener('mouseleave',function(){b.style.transform=''});
+    });
+  }
+})();
+</script>
+</body>
+</html>
