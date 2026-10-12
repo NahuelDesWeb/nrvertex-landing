@@ -27,11 +27,12 @@
   --f-body:"Inter", "Helvetica Neue", Arial, sans-serif;
   --f-mono:"Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --gutter:clamp(16px, 4vw, 56px);
-  --max:1280px;
+  --max:1400px;
   --ease:cubic-bezier(.2,.8,.2,1);
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ink);color:var(--paper);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
@@ -53,7 +54,7 @@ p{margin:0}
 .btn--ghost:hover{--bg:transparent;border-color:var(--paper)}
 .btn--light{--bg:var(--paper);--fg:var(--violet-ink)}
 .btn--light:hover{--bg:#FFFFFF}
-.btn--sm{padding:11px 16px;font-size:14px}
+.btn--sm{padding:11px 16px;font-size:14px;gap:8px}
 
 /* ---------- Header ---------- */
 .hdr{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
@@ -68,30 +69,45 @@ p{margin:0}
 .nav a:hover{color:var(--paper)}
 @media (max-width:860px){.nav{display:none}}
 
-/* ---------- Hero ---------- */
-.hero{position:relative;padding-top:calc(72px + clamp(48px,8vw,110px));padding-bottom:clamp(40px,6vw,72px);overflow:hidden;isolation:isolate}
+/* ---------- Hero: siempre entra completo en el viewport (escritorio, laptop y tablet) ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding-top:calc(72px + env(safe-area-inset-top,0px) + clamp(12px,3vh,40px));padding-bottom:clamp(20px,4vh,48px);overflow:hidden;isolation:isolate}
 .hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:120%;z-index:-2;
   background:radial-gradient(60% 50% at 78% 30%,rgba(106,90,255,.32),transparent 70%),radial-gradient(40% 40% at 95% 75%,rgba(59,91,255,.22),transparent 70%)}
-.hero__grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
-@media (max-width:980px){.hero__grid{grid-template-columns:1fr}}
-.hero h1{font-size:clamp(40px,10.4vw,164px);font-weight:900;text-transform:uppercase;letter-spacing:-.055em;line-height:.86;margin-top:22px;margin-bottom:clamp(36px,5vw,64px)}
+.hero__grid{width:100%;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.9fr);gap:clamp(32px,4vw,72px);align-items:center}
+.hero__copy{min-width:0}
+.hero h1{font-size:min(6.5vw,11.5vh,100px);font-size:min(6.5vw,11.5svh,100px);font-weight:900;text-transform:uppercase;letter-spacing:-.055em;line-height:.86;margin:clamp(14px,2.2vh,24px) 0 clamp(18px,3.2vh,34px)}
 .hero h1 .ln{display:block;overflow:hidden;white-space:nowrap;padding-block:.1em .03em;margin-top:-.13em}
 .hero h1 .ln span{display:inline-block;animation:rise 1s var(--ease) both}
 .hero h1 .ln:nth-child(2) span{animation-delay:.08s}
 .hero h1 .ln:nth-child(3) span{animation-delay:.16s}
 .hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--violet) 10%,#9C8FFF 55%,var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero__lead{max-width:34em;font-size:clamp(17px,1.5vw,21px);color:var(--mute)}
+.hero__lead{max-width:32em;font-size:clamp(16px,min(1.35vw,2.4vh),20px);color:var(--mute)}
 .hero__lead strong{color:var(--paper);font-weight:600}
-.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
-.hero__note{margin-top:22px;font:400 13px/1.5 var(--f-mono);color:var(--mute);letter-spacing:.02em}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(20px,3.6vh,36px)}
+.hero__note{margin-top:clamp(12px,2vh,20px);font:400 13px/1.5 var(--f-mono);color:var(--mute);letter-spacing:.02em}
 @keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+@media (max-width:900px){
+  .hero__grid{grid-template-columns:1fr;gap:clamp(24px,3.5vh,40px)}
+  .hero h1{font-size:min(10.4vw,7.2vh);font-size:min(10.4vw,7.2svh)}
+  .hero .rank{max-width:560px;--row:clamp(46px,5.2vh,58px)}
+  .hero__note{display:none}
+}
+@media (max-width:600px){
+  .hero{min-height:0;display:block;padding-bottom:8px}
+  .hero h1{font-size:11.2vw}
+  .hero .rank{--row:48px}
+  .hero .rank__name{font-size:14px}
+  .hero .rank__foot{display:none}
+  .hero .rank__row[data-from="2"]{display:none}
+  .hero .rank__list{height:calc(3 * (var(--row) + 8px))}
+}
 
 /* Ranking en vivo (caso real FloreríaLiz) */
-.rank{background:var(--ink-2);border:1px solid var(--line);padding:18px;position:relative}
+.rank{--row:clamp(52px,7vh,66px);background:var(--ink-2);border:1px solid var(--line);padding:clamp(12px,2vh,18px);position:relative;margin:0;min-width:0}
 .rank__q{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--ink-3);border:1px solid var(--line);border-radius:999px;font:400 14px/1 var(--f-body);color:var(--paper)}
 .rank__q svg{width:16px;height:16px;flex:none;color:var(--mute)}
-.rank__list{position:relative;height:calc(4 * 74px);margin-top:14px}
-.rank__row{position:absolute;left:0;right:0;height:66px;display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:12px;padding:0 14px;border:1px solid var(--line);background:var(--ink);transform:translateY(calc(var(--p) * 74px));transition:transform 1.4s var(--ease),border-color .6s,background .6s}
+.rank__list{position:relative;height:calc(4 * (var(--row) + 8px));margin-top:clamp(10px,1.6vh,14px)}
+.rank__row{position:absolute;left:0;right:0;height:var(--row);display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:12px;padding:0 14px;border:1px solid var(--line);background:var(--ink);transform:translateY(calc(var(--p) * (var(--row) + 8px)));transition:transform 1.4s var(--ease),border-color .6s,background .6s}
 .rank__pos{font:600 13px/1 var(--f-mono);color:var(--mute)}
 .rank__name{font:600 15px/1.2 var(--f-display);letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rank__meta{display:block;font:400 12px/1.4 var(--f-body);color:var(--mute);margin-top:3px}
@@ -154,6 +170,62 @@ p{margin:0}
 .case__before{display:inline-block;margin-top:22px;font:500 13px/1.4 var(--f-mono);padding:8px 12px;border:1px solid rgba(255,255,255,.35)}
 .case--dark .case__before{border-color:var(--line);color:var(--mute)}
 .case__before b{font-weight:500}
+
+/* ---------- Proyectos web (formato omniux: dispositivo + datos) ---------- */
+.projs{background:var(--ink);border-top:1px solid var(--line)}
+.proj{position:relative;isolation:isolate;overflow:hidden;overflow:clip;padding-block:clamp(56px,8vw,112px);border-top:1px solid var(--line)}
+.proj__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,96px);align-items:center}
+.proj--rev .proj__media{order:2}
+@media (max-width:900px){.proj__grid{grid-template-columns:1fr}.proj--rev .proj__media{order:0}}
+.proj__media{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px;margin:0}
+.proj__media::before{content:"";position:absolute;inset:8% -10%;z-index:-1;background:radial-gradient(closest-side,rgba(106,90,255,.42),transparent);filter:blur(10px)}
+.phone{position:relative;width:min(300px,74vw);padding:11px;border-radius:48px;background:linear-gradient(160deg,#2B2A33,#121216 40%);box-shadow:0 0 0 1px #34333E,0 60px 90px -40px rgba(106,90,255,.55),inset 0 0 0 2px #0A0A0C;transition:transform .8s var(--ease)}
+.proj:hover .phone{transform:translateY(-6px)}
+.phone__screen{position:relative;overflow:hidden;border-radius:38px;aspect-ratio:600/1362;background:#000}
+.phone__screen video{position:absolute;left:0;right:0;bottom:0;top:auto;width:100%;height:auto;aspect-ratio:600/1298;object-fit:cover}
+.phone__bar{position:absolute;inset:0 0 auto 0;height:calc(100% - 100% * 1298 / 1362);display:flex;align-items:center;justify-content:space-between;padding:0 26px 0 30px;font:600 11px/1 var(--f-body);color:#fff}
+.phone__bar svg{width:34px;height:10px}
+.phone__island{position:absolute;top:7px;left:50%;width:76px;height:20px;border-radius:20px;background:#000;transform:translateX(-50%);z-index:2}
+.phone__ctl{position:absolute;right:12px;bottom:12px;z-index:3;width:44px;height:44px;border-radius:50%;border:0;display:grid;place-items:center;background:rgba(11,11,12,.72);color:#fff;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .2s}
+.phone__ctl:hover{background:var(--violet)}
+.phone__ctl svg{width:18px;height:18px}
+.phone__ctl .i-play{display:none}
+.phone__ctl[aria-pressed="false"] .i-play{display:block}
+.phone__ctl[aria-pressed="false"] .i-pause{display:none}
+.proj__cap{font:500 11px/1.4 var(--f-mono);text-transform:uppercase;letter-spacing:.12em;color:var(--mute);text-align:center}
+.proj__copy{min-width:0}
+.proj__url{display:inline-flex;align-items:center;gap:10px;font:500 13px/1 var(--f-mono);color:var(--paper);text-decoration:none;padding:9px 12px;border:1px solid var(--line);margin-bottom:22px;transition:border-color .2s}
+.proj__url:hover{border-color:var(--violet)}
+.proj__url i{width:8px;height:8px;border-radius:50%;background:#3DDC84;display:block}
+.proj h3{font-size:clamp(32px,4vw,58px);font-weight:800;max-width:15em}
+.proj__lead{margin-top:20px;color:var(--mute);max-width:34em}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(32px,4vw,48px);padding-top:24px;border-top:1px solid var(--line)}
+.fact{min-width:0}
+.fact__v{font:800 clamp(48px,5.4vw,84px)/.9 var(--f-display);letter-spacing:-.055em;color:var(--paper)}
+.fact__k{margin-top:12px;font-size:14px;line-height:1.45;color:var(--mute);max-width:14em}
+@media (max-width:560px){.facts{grid-template-columns:1fr}.fact{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:center}.fact__k{margin-top:0}}
+.proj__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+
+/* ---------- Usabilidad ---------- */
+.skip{position:fixed;left:16px;top:-60px;z-index:100;background:var(--paper);color:var(--ink);padding:12px 16px;font:600 14px/1 var(--f-display);text-decoration:none;transition:top .2s}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nav a{position:relative;padding-block:8px}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--violet);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav a.is-active{color:var(--paper)}
+.nav a.is-active::after,.nav a:hover::after{transform:none}
+.btn[data-wa]::before{content:"";width:18px;height:18px;flex:none;background:currentColor;-webkit-mask:var(--wa) center/contain no-repeat;mask:var(--wa) center/contain no-repeat}
+:root{--wa:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.2-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.6.6-.9 1.4-.9 2.2.1 1 .4 1.9 1 2.7 1.1 1.6 2.5 2.9 4.2 3.7.5.2.9.4 1.4.5.5.2 1.1.2 1.6.1.6-.1 1.2-.5 1.5-1 .2-.4.2-.8.1-1.2 0-.1-.2-.2-.4-.3z'/%3E%3C/svg%3E")}
+.menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line);background:transparent;color:var(--paper);cursor:pointer;place-items:center}
+.menu-btn svg{width:20px;height:20px}
+.hdr__act{display:flex;align-items:center;gap:10px}
+@media (max-width:860px){.menu-btn{display:grid}}
+@media (max-width:480px){.hide-sm{display:none}.brand{font-size:17px}}
+.mnav{position:fixed;inset:0;z-index:60;background:rgba(11,11,12,.97);padding:calc(24px + env(safe-area-inset-top,0px)) var(--gutter) calc(24px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px}
+.mnav__top{display:flex;justify-content:space-between;align-items:center;height:48px;margin-bottom:24px}
+.mnav a.mnav__l{font:800 clamp(34px,9vw,48px)/1.15 var(--f-display);letter-spacing:-.04em;text-decoration:none;padding-block:6px;border-bottom:1px solid var(--line)}
+.mnav .btn{margin-top:auto;justify-content:center}
+.vid-fail{position:absolute;inset:auto 12px 12px 12px;z-index:3;background:rgba(11,11,12,.85);padding:10px 12px;font-size:13px}
 
 /* ---------- Servicios ---------- */
 .svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -236,6 +308,7 @@ p{margin:0}
 .final .btn--ghost{--fg:var(--on-violet);border-color:rgba(255,255,255,.4)}
 .final .btn--ghost:hover{border-color:#fff}
 .final .bars{opacity:.35}
+.hero .bars{height:min(26vh,260px);opacity:.38}
 .final .bars i{background:linear-gradient(to top,transparent,rgba(255,255,255,.3))}
 
 /* ---------- Footer ---------- */
@@ -263,6 +336,7 @@ p{margin:0}
 </head>
 <body>
 
+<a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="hdr" id="top">
   <div class="wrap hdr__in">
     <a class="brand" href="#top" aria-label="NRVERTEX, inicio">
@@ -270,28 +344,42 @@ p{margin:0}
     </a>
     <nav class="nav" aria-label="Principal">
       <a href="#casos">Casos</a>
+      <a href="#proyectos">Proyectos</a>
       <a href="#servicios">Servicios</a>
       <a href="#testimonios">Testimonios</a>
       <a href="#preguntas">Preguntas</a>
     </nav>
-    <a class="btn btn--sm" data-wa="Hola, vengo desde la web de NRVERTEX y quiero agendar una consulta gratis." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Agendá por WhatsApp</a>
+    <div class="hdr__act"><a class="btn btn--sm" data-wa="Hola, vengo desde la web de NRVERTEX y quiero agendar una consulta gratis." href="https://wa.me/5491172383806" target="_blank" rel="noopener"><span><span class="hide-sm">Agendá por </span>WhatsApp</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Abrir menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
   </div>
 </header>
+<div class="mnav" id="mnav" hidden role="dialog" aria-modal="true" aria-label="Menú">
+  <div class="mnav__top">
+    <span class="brand"><span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>NRVERTEX</span>
+    <button class="menu-btn" type="button" data-close aria-label="Cerrar menú" style="display:grid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <a class="mnav__l" href="#casos">Casos</a>
+  <a class="mnav__l" href="#proyectos">Proyectos</a>
+  <a class="mnav__l" href="#servicios">Servicios</a>
+  <a class="mnav__l" href="#testimonios">Testimonios</a>
+  <a class="mnav__l" href="#preguntas">Preguntas</a>
+  <a class="btn" data-wa="Hola, vengo desde la web de NRVERTEX y quiero agendar una consulta gratis." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Agendá por WhatsApp</a>
+</div>
+<span class="sr" id="hint-wa">Se abre WhatsApp en otra pestaña.</span>
+<span class="sr" id="hint-ext">Se abre en otra pestaña.</span>
 
-<main>
+<main id="contenido" tabindex="-1">
   <!-- 2. HERO -->
-  <section class="hero" aria-labelledby="hero-t">
+  <section class="hero" id="inicio" aria-labelledby="hero-t">
     <div class="bars" aria-hidden="true" data-bars="22"></div>
-    <div class="wrap">
-      <span class="eyebrow">Posicionamiento local en Google Maps · CABA</span>
-      <h1 id="hero-t">
-        <span class="ln"><span>Dejamos tu</span></span>
-        <span class="ln"><span>marca en lo</span></span>
-        <span class="ln"><span>más <em>alto.</em></span></span>
-      </h1>
-    </div>
     <div class="wrap hero__grid">
-      <div>
+      <div class="hero__copy">
+        <span class="eyebrow">Posicionamiento local en Google Maps · CABA</span>
+        <h1 id="hero-t">
+          <span class="ln"><span>Dejamos tu</span></span>
+          <span class="ln"><span>marca en lo</span></span>
+          <span class="ln"><span>más <em>alto.</em></span></span>
+        </h1>
         <p class="hero__lead">Hacemos que los vecinos que te buscan en Google Maps <strong>te encuentren primero a vos</strong>, y no a la competencia. Sin publicidad paga, sin comisiones, sin intermediarios.</p>
         <div class="hero__cta">
           <a class="btn" data-wa="Hola, vengo desde la web de NRVERTEX y quiero agendar una consulta gratis de 20 minutos." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Agendá tu consulta gratis
@@ -389,6 +477,78 @@ p{margin:0}
       </div>
     </section>
   </div>
+
+
+  <!-- PROYECTOS WEB -->
+  <section class="projs" id="proyectos" aria-labelledby="proj-t">
+    <div class="wrap sec" style="padding-bottom:clamp(40px,5vw,64px)">
+      <div class="sec__head rv" style="margin-bottom:0">
+        <span class="eyebrow">Proyectos web</span>
+        <h2 id="proj-t">Páginas que convierten visitas en clientes.</h2>
+        <p>Así se ven en el celular, que es donde las abre tu cliente. Grabadas en vivo, sin edición.</p>
+      </div>
+    </div>
+
+    <article class="proj" aria-labelledby="p1-t">
+      <div class="wrap proj__grid">
+        <figure class="proj__media rv">
+          <div class="phone"><div class="phone__screen">
+            <span class="phone__bar" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" fill="currentColor"><rect x="0" y="6" width="3" height="4" rx="1"/><rect x="4.5" y="4" width="3" height="6" rx="1"/><rect x="9" y="2" width="3" height="8" rx="1"/><rect x="13.5" y="0" width="3" height="10" rx="1"/><rect x="20" y="1" width="12" height="8" rx="2" fill="none" stroke="currentColor"/><rect x="21.5" y="2.5" width="8" height="5" rx="1"/></svg></span><span class="phone__island" aria-hidden="true"></span>
+            <video muted loop playsinline preload="none" poster="media/liz-poster.webp" aria-label="Recorrido en celular por la página de FloreríaLiz" data-autoplay>
+              <source src="media/liz.webm" type="video/webm"><source src="media/liz.mp4" type="video/mp4">
+            </video>
+            <button class="phone__ctl" type="button" aria-pressed="true" aria-label="Pausar video"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg></button>
+          </div></div>
+          <figcaption class="proj__cap">Grabación real · celular · 390 px</figcaption>
+        </figure>
+        <div class="proj__copy rv">
+          <a class="proj__url" href="https://florerializ.com.ar" target="_blank" rel="noopener"><i aria-hidden="true"></i>florerializ.com.ar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="eyebrow" style="display:flex">Florería · Villa del Parque y Villa Maipú</span>
+          <h3 id="p1-t" style="margin-top:16px">Una florería de barrio que se pide por WhatsApp en 4 pasos.</h3>
+          <p class="proj__lead">Catálogo con el precio a la vista, filtro por presupuesto y pedido sin registrarse. Pensada para quien quiere regalar flores y no sabe cuál elegir ni cuánto gastar.</p>
+          <div class="facts">
+            <div class="fact"><div class="fact__v num">12</div><p class="fact__k">ramos con el precio a la vista</p></div>
+            <div class="fact"><div class="fact__v num">3</div><p class="fact__k">rangos de presupuesto para elegir rápido</p></div>
+            <div class="fact"><div class="fact__v num">4</div><p class="fact__k">pasos para pedir, sin registrarse</p></div>
+          </div>
+          <div class="proj__actions">
+            <a class="btn" data-wa="Hola, vi la página de FloreríaLiz y quiero una página así para mi negocio." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Quiero una página así</a>
+            <a class="btn btn--ghost" href="https://florerializ.com.ar" target="_blank" rel="noopener">Ver la página en vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj proj--rev" aria-labelledby="p2-t">
+      <div class="wrap proj__grid">
+        <figure class="proj__media rv">
+          <div class="phone"><div class="phone__screen">
+            <span class="phone__bar" aria-hidden="true"><span>9:41</span><svg viewBox="0 0 34 10" fill="currentColor"><rect x="0" y="6" width="3" height="4" rx="1"/><rect x="4.5" y="4" width="3" height="6" rx="1"/><rect x="9" y="2" width="3" height="8" rx="1"/><rect x="13.5" y="0" width="3" height="10" rx="1"/><rect x="20" y="1" width="12" height="8" rx="2" fill="none" stroke="currentColor"/><rect x="21.5" y="2.5" width="8" height="5" rx="1"/></svg></span><span class="phone__island" aria-hidden="true"></span>
+            <video muted loop playsinline preload="none" poster="media/alb-poster.webp" aria-label="Recorrido en celular por la página de Albarenas" data-autoplay>
+              <source src="media/alb.webm" type="video/webm"><source src="media/alb.mp4" type="video/mp4">
+            </video>
+            <button class="phone__ctl" type="button" aria-pressed="true" aria-label="Pausar video"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg></button>
+          </div></div>
+          <figcaption class="proj__cap">Grabación real · celular · 390 px</figcaption>
+        </figure>
+        <div class="proj__copy rv">
+          <a class="proj__url" href="https://albarenas.com.ar" target="_blank" rel="noopener"><i aria-hidden="true"></i>albarenas.com.ar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="eyebrow" style="display:flex">Remodelaciones · CABA</span>
+          <h3 id="p2-t" style="margin-top:16px">Precio cerrado y fecha de entrega, antes de romper un azulejo.</h3>
+          <p class="proj__lead">Comparador de antes y después, las dudas de toda reforma respondidas y un botón para pedir presupuesto en cada servicio.</p>
+          <div class="facts">
+            <div class="fact"><div class="fact__v num">3</div><p class="fact__k">servicios, cada uno con su botón de cotizar</p></div>
+            <div class="fact"><div class="fact__v num">5</div><p class="fact__k">pasos explicados, del mensaje a la entrega</p></div>
+            <div class="fact"><div class="fact__v num">4</div><p class="fact__k">dudas de toda reforma, resueltas</p></div>
+          </div>
+          <div class="proj__actions">
+            <a class="btn" data-wa="Hola, vi la página de Albarenas y quiero una página así para mi negocio." href="https://wa.me/5491172383806" target="_blank" rel="noopener">Quiero una página así</a>
+            <a class="btn btn--ghost" href="https://albarenas.com.ar" target="_blank" rel="noopener">Ver la página en vivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
 
   <!-- 5. SERVICIOS + PLANES -->
   <section class="sec" id="servicios" aria-labelledby="svc-t">
@@ -574,6 +734,7 @@ p{margin:0}
         <h4>Sitio</h4>
         <ul>
           <li><a href="#casos">Casos de éxito</a></li>
+          <li><a href="#proyectos">Proyectos web</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#planes">Planes</a></li>
           <li><a href="#preguntas">Preguntas</a></li>
@@ -633,6 +794,40 @@ p{margin:0}
       setTimeout(function(){rows[0].classList.add('is-us')},700);
     },900);
   }
+
+
+  // Accesibilidad: avisar qué abre cada link externo
+  d.querySelectorAll('a[target="_blank"]').forEach(function(a){a.setAttribute('aria-describedby',a.hasAttribute('data-wa')?'hint-wa':'hint-ext')});
+
+  // Menú en celular (abrir, cerrar con botón, Esc o al elegir una sección)
+  var mnav=d.getElementById('mnav'),mbtn=d.querySelector('.hdr .menu-btn');
+  function setMenu(open){mnav.hidden=!open;mbtn.setAttribute('aria-expanded',open);d.body.style.overflow=open?'hidden':'';if(open){mnav.querySelector('[data-close]').focus()}else{mbtn.focus()}}
+  mbtn.addEventListener('click',function(){setMenu(true)});
+  mnav.querySelector('[data-close]').addEventListener('click',function(){setMenu(false)});
+  mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mnav.hidden=true;mbtn.setAttribute('aria-expanded','false');d.body.style.overflow=''})});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape'&&!mnav.hidden)setMenu(false)});
+
+  // Sección activa en el menú (estado visible del sistema)
+  var links=[].slice.call(d.querySelectorAll('.nav a'));
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){var on=l.getAttribute('href')==='#'+e.target.id;l.classList.toggle('is-active',on);on?l.setAttribute('aria-current','true'):l.removeAttribute('aria-current')})}})},{rootMargin:'-45% 0px -50% 0px'});
+    links.forEach(function(l){var t=d.querySelector(l.getAttribute('href'));if(t)spy.observe(t)});
+  }
+
+  // Videos: se reproducen solo cuando están en pantalla; el usuario puede pausar
+  d.querySelectorAll('video[data-autoplay]').forEach(function(v){
+    var btn=v.parentNode.querySelector('.phone__ctl'),userPaused=reduce;
+    function ui(){var on=!v.paused;btn.setAttribute('aria-pressed',on);btn.setAttribute('aria-label',on?'Pausar video':'Reproducir video')}
+    v.addEventListener('play',ui);v.addEventListener('pause',ui);
+    btn.addEventListener('click',function(){if(v.paused){userPaused=false;v.play().catch(function(){})}else{userPaused=true;v.pause()}});
+    v.addEventListener('error',function(){fail()},true);
+    v.querySelectorAll('source')[1].addEventListener('error',fail);
+    function fail(){if(v.parentNode.querySelector('.vid-fail'))return;var m=d.createElement('p');m.className='vid-fail';m.textContent='No se pudo cargar el video. Podés ver la página en vivo con el botón de al lado.';v.parentNode.appendChild(m);btn.hidden=true}
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!userPaused){v.preload='auto';v.play().catch(function(){})}else if(!e.isIntersecting){v.pause()}})},{threshold:.35}).observe(v);
+    }
+    ui();
+  });
 
   // Revelado suave al entrar en pantalla (solo desplazamiento)
   if('IntersectionObserver' in window && !reduce){
